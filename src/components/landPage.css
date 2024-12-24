@@ -1,0 +1,91 @@
+/* 全局初始化（可选） */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* 让“终端”容器在屏幕正中 */
+  .app-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* 终端主体容器 */
+  .terminal-container {
+    width: 600px;
+    background-color: #222;               /* 终端的黑色背景 */
+    color: #fff;                          /* 终端中文字颜色 */
+    font-family: "Courier New", monospace;
+    border-radius: 5px;
+    text-align: left;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* 终端头部：包含三个小圆点 + 标题 */
+  .terminal-header {
+    display: flex;
+    align-items: center;          /* 垂直居中 */
+    justify-content: space-between; /* 两边布局 */
+    position: relative;           /* 为了让 title 使用绝对定位 */
+    padding: 8px 12px;
+    background-color: #333;
+  }
+  
+  /* 左侧的模拟按钮 */
+  .terminal-buttons {
+    display: flex;
+    gap: 8px;
+  }
+  
+  /* 每个小圆点 */
+  .terminal-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  /* 不同颜色的小圆点 */
+  .red {
+    background-color: #ff5f57;
+  }
+  .yellow {
+    background-color: #ffbd2e;
+  }
+  .green {
+    background-color: #28ca41;
+  }
+  
+  /* 标题居中 */
+  .terminal-title {
+    position: absolute;
+    left: 50%;                    /* 水平中心 */
+    transform: translateX(-50%);  /* 抵消自身宽度的一半 */
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  /* 终端正文 */
+  .terminal-body {
+    padding: 16px;
+  }
+  
+  /* 每一行命令或输出 */
+  .terminal-line {
+    margin-bottom: 6px; /* 行间距 */
+  }
+  
+  /* 命令提示符 */
+  .prompt {
+    color: #47d147; /* 绿色 */
+  }
+  
+  /* 命令文本，稍微和提示符颜色区分 */
+  .command {
+    color: #ffffff;
+  }
