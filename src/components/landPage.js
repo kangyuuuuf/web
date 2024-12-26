@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import TypeIt from "typeit-react";
 import './landPage.css';
 
 function LandPage() {
   const [currentTime, setCurrentTime] = useState('');
-
+  const [currentLog1, setCurrentLog1] = useState('');
+  const [currentLog2, setCurrentLog2] = useState('');
+  const [currentLog3, setCurrentLog3] = useState('');
   // Function to update current time
   useEffect(() => {
     const updateTime = () => {
@@ -34,30 +37,74 @@ function LandPage() {
 
         {/* Terminal Body */}
         <div className="terminal-body">
-          <p className="terminal-line">
-            <span className="prompt">user@localhost:</span> <span className="command">ls</span>
-          </p>
-          <p className="terminal-line">portfolio  resume.txt  about-me.txt</p>
-
-          <p className="terminal-line">
-            <span className="prompt">user@localhost:</span> <span className="command">cat about-me.txt</span>
-          </p>
-          <p className="terminal-line">Hey, I am Kangyu. I majored in computer science at the Grainger College of Engineering @ [UIUC](https://illinois.edu/) ane earned my Bachelor of Science degree with Highest Honors in May 2024. I will continue my jounary in MCS program as a graduated student starting fall 2024. 
-My fields of interests are mainly artificial intelligence/machine learning, game development, and education in computer science.</p>
-
-          <p className="terminal-line">
-            <span className="prompt">user@localhost:</span> <span className="command">echo "Hello, World!"</span>
-          </p>
-          <p className="terminal-line">Hello, World!</p>
-
-          {/* Blinking Cursor */}
-          <p className="terminal-line">
-            <span className="prompt">user@localhost:</span> <span className="command"></span> 
-            <span className="cursor"> _ </span>
-          </p>
+          <span className="prompt">user@localhost: </span>
+          <span className="command">
+          <TypeIt
+            options={{
+                speed: 40,
+                lifeLike: true,
+                afterComplete: function (instance) {
+                instance.destroy(); 
+                setCurrentLog1(true);
+                },
+            }}
+            getBeforeInit={(instance) => {
+                instance.pause(500).type("echo \"Hey, I'm Kangyu!\"").pause(700);
+                return instance;
+            }}
+            />
+            </span>
+            { currentLog1 && <p className="command">
+                <TypeIt
+            options={{
+                speed: 20,
+                afterComplete: function (instance) {
+                instance.destroy(); 
+                setCurrentLog2(true);
+                },
+            }}
+            getBeforeInit={(instance) => {
+                instance.pause(500).type("Hey, I'm Kangyu!").pause(500);
+                return instance;
+            }}
+            />
+            </p>}
+        { currentLog2 && <span className="prompt">user@localhost: </span>}
+        { currentLog2 &&
+          
+          <span className="command">
+          <TypeIt
+            options={{
+                speed: 40,
+                lifeLike: true,
+                afterComplete: function (instance) {
+                instance.destroy(); 
+                setCurrentLog3(true);
+                },
+            }}
+            getBeforeInit={(instance) => {
+                instance.pause(900).type("cat about-me.txt").pause(500);
+                return instance;
+            }}
+            />
+            </span>
+          }
+          { currentLog3 && <p className="command">
+                <TypeIt
+            options={{
+                speed: 40,
+                loop: true,
+                breakLines: false,
+                nextStringDelay: 2000,
+                strings: ["I majored in computer science at the Grainger College of Engineering @ UIUC and earned my Bachelor of Science degree with Highest Honors in May 2024.", "I will continue my journey in the MCS program as a graduate student starting Fall 2024.", "My fields of interest are mainly artificial intelligence/machine learning, game development, and education in computer science."]
+            }}
+            />
+            </p>}
+            
         </div>
       </div>
     </div>
+      
   );
 }
 
