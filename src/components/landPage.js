@@ -57,15 +57,16 @@ function LandPage() {
             { currentLog1 && <p className="command">
                 <TypeIt
             options={{
-                speed: 20,
+                speed: 0.1,
+                nextStringDelay:0,
+                strings: ['`_```_````````````````___`_```````````', '|`|`|`|`___`_```_````|_`_(`)_`__`___``', "|`|_|`|/`_`\\`|`|`|````|`||/|`'_```_`\\`", '|``_``|``__/`|_|`|_```|`|``|`|`|`|`|`|', '|_|`|_|\\___|\\__,`(`)`|___|`|_|`|_|`|_|', '|`|/`/__`_`_|___/|/_`_`_```_`_```_|`|`', "|`'`//`_``|`'_`\\`/`_``|`|`|`|`|`|`|`|`", '|`.`\\`(_|`|`|`|`|`(_|`|`|_|`|`|_|`|_|`', '|_|\\_\\__,_|_|`|_|\\__,`|\\__,`|\\__,_(_)`', '`````````````````|___/`|___/``````````']
+                ,
                 afterComplete: function (instance) {
-                instance.destroy(); 
-                setCurrentLog2(true);
+                setTimeout(() => {
+                    instance.destroy(); // Destroy the instance after 2 seconds
+                    setCurrentLog2(true); // Trigger the next log
+                }, 700);
                 },
-            }}
-            getBeforeInit={(instance) => {
-                instance.pause(500).type("Hey, I'm Kangyu!").pause(500);
-                return instance;
             }}
             />
             </p>}
@@ -78,6 +79,7 @@ function LandPage() {
                 speed: 40,
                 lifeLike: true,
                 afterComplete: function (instance) {
+                instance.pause(500);
                 instance.destroy(); 
                 setCurrentLog3(true);
                 },
@@ -92,11 +94,12 @@ function LandPage() {
           { currentLog3 && <p className="command">
                 <TypeIt
             options={{
-                speed: 40,
+                speed: 0.1,
                 loop: true,
                 breakLines: false,
-                nextStringDelay: 2000,
-                strings: ["I majored in computer science at the Grainger College of Engineering @ UIUC and earned my Bachelor of Science degree with Highest Honors in May 2024.", "I will continue my journey in the MCS program as a graduate student starting Fall 2024.", "My fields of interest are mainly artificial intelligence/machine learning, game development, and education in computer science."]
+                nextStringDelay: [5000, 1000],
+                loopDelay: [1000, 5000],
+                strings: ["I majored in computer science at the Grainger College of Engineering @ UIUC and earned my Bachelor of Science degree with Highest Honors in May 2024.", "I will continue my journey in the MCS program as a graduate student starting Fall 2024.", "My fields of interest are mainly artificial intelligence/ machine learning, game development, and education in computer science."]
             }}
             />
             </p>}
