@@ -54,7 +54,14 @@ function  Navigate() {
           I am currently enrolled in the MCS program as a graduate student starting in Fall 2024, conducting research on utilizing CS tools to improve non-CS elementary courses.
         </p>
         <p>
-          My fields of interests are mainly artificial intelligence/machine learning, game development, and education in computer science.
+          My fields of interests are mainly artificial intelligence/machine learning, game development, and <motion.a
+            href="https://publish.illinois.edu/computingedresearch/"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ color: "#0056b3" }}
+            style={{ display: "inline", color: "#007bff", transition: "color 0.3s ease" }}
+          > computer science education
+          </motion.a>.
         </p>
       </section>
 
