@@ -1,19 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import TypeIt from "typeit-react";
 import './landPage.css';
-import Terminal from '../terminal/terminal';
-import {motion} from 'framer-motion';
+
+import {animate, motion} from 'framer-motion';
 
 function LandPage() {
-const text = "Kangyu Feng";
+  const [navigate, setNavigate] = useState(false);
+  const elementRef = useRef(null);
+
+  const handleNavigate = () => {
+    setNavigate(true); // 切换到新页面
+
+    setTimeout(() => {
+      window.location.href = "/navigate";
+
+    }, 1000);
+  };
+const text = "Kangyu Feng | 冯康宇";
 const randomizedIndices = text.split("").map((_, i) => i).sort(() => Math.random() - 0.5);
   return (
     
     <div className="app-container">
-    <motion.img className='circular-image' 
+    <motion.img ref={elementRef} className='circular-image' 
       whileHover={{ rotate: 10 }}
-      src="/image.png" alt="Kangyu Feng" onClick={() => window.location.href = "/"} />
-      <div className='head' >
+      src="/image.png" alt="Kangyu Feng" onClick={() => window.location.href = "/"}  animate={navigate ? { opacity: 0} : {} } transition={{ duration: 0.5 }} />
+      <motion.div className='head' animate={navigate ? { opacity: 0} : {} } transition={{ duration: 0.5 }}>
       <div className= "title">
       {text.split("").map((char, index) => (
         <motion.span
@@ -59,12 +70,13 @@ const randomizedIndices = text.split("").map((_, i) => i).sort(() => Math.random
           cursor: "pointer",
           padding: "0 20px",
         }}
+        onClick={handleNavigate}
       >
-        Navigate
+        General
       </motion.button>
       <div
         style={{
-          width: "1px",
+          width: "2px",
           height: "1.5rem",
           backgroundColor: "#000", // Black vertical line
         }}
@@ -81,10 +93,10 @@ const randomizedIndices = text.split("").map((_, i) => i).sort(() => Math.random
           padding: "0 20px",
         }}
       >
-        Research
+        Details
       </motion.button>
     </motion.div>
-    </div>
+    </motion.div>
       {/* <Terminal /> */}
     </div>
       

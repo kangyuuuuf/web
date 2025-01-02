@@ -13,6 +13,17 @@
     min-height: auto;
     
   }
+  .circular-image {
+    width: 300px; /* 设置宽度 */
+    height: 300px; /* 设置高度 */
+    border-radius: 50%; /* 裁剪为圆形 */
+    object-fit: cover; /* 确保图片比例不变，裁剪溢出部分 */
+    display: block; /* 将图片变为块级元素 */
+    margin: 0 auto; /* 居中 */
+    border: 3px solid #000000; /* 可选：添加边框 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 可选：添加阴影 */
+  }
+  
   .title {
     font-size: 4rem; /* 设置字体大小 */
     font-weight: bold; /* 设置字体粗细 */
