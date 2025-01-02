@@ -21,7 +21,7 @@
 .subsection h2 {
   font-size: 32px; /* Added unit for proper interpretation */
   font-weight: 700; /* Bold for better emphasis on section titles */
-  margin: 30px 0 20px 0; /* Added top margin for better spacing */
+  margin: 10px 0 20px 0; /* Added top margin for better spacing */
   line-height: 1.4; /* Adjusted line-height for multi-line titles */
   color: #000; /* Black for strong emphasis */
   border-bottom: 2px solid #ddd; /* Optional underline for visual separation */
@@ -29,7 +29,7 @@
 }
 .subsection a {
   text-decoration: none; /* Remove underline by default */
-  color: #007bff; /* Default link color (blue) */
+  color: #000000; 
   font-weight: 500; /* Slightly bold for emphasis */
   transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth hover transitions */
 }
@@ -39,6 +39,9 @@
   flex: 1;
   background: #fff;
   padding: 20px;
+  height: 100vh;
+  width: 320px; /* Fixed width for the sidebar */
+  position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -145,6 +148,9 @@
 
 /* Main Content */
 .main-content {
+  margin-left: 320px;
+  width: calc(100% - 320px);
+  overflow-y: auto;
   flex: 3;
   padding: 40px;
   display: flex;
@@ -160,7 +166,7 @@
 
 .nav a {
   text-decoration: none;
-  color: #007bff;
+  color: #000000;
   font-size: 1rem;
 }
 

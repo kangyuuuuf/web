@@ -12,6 +12,7 @@ function  Navigate() {
   ];
   return (
     <motion.div className="container" 
+      initial={{opacity:0}}
       animate={{opacity:1}}>
       {/* Sidebar Section */}
       <div className="sidebar">
@@ -51,6 +52,8 @@ function  Navigate() {
           > UIUC
           </motion.a> and earned my <strong>Bachelor of Science</strong> degree with Highest Honors in May 2024. 
           I am currently enrolled in the MCS program as a graduate student starting in Fall 2024, conducting research on utilizing CS tools to improve non-CS elementary courses.
+        </p>
+        <p>
           My fields of interests are mainly artificial intelligence/machine learning, game development, and education in computer science.
         </p>
       </section>
