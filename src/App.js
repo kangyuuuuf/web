@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
         <p>
-          This is <code>Kangyu's</code> personal website.
+        Still renovating the site, please come back later!
         </p>
         <LandPage />
     </div>
