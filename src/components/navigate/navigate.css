@@ -5,6 +5,33 @@
   font-family: "Arial", sans-serif;
   color: #333;
   background: #f8f8f8;
+  font-family: "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace;
+}
+
+.subsection p {
+  font-size: 18px; /* Adjusted for readability */
+  font-style: normal; /* Default style */
+  font-variant: normal; /* Default variant */
+  font-weight: 500; /* Slightly bold for better emphasis */
+  line-height: 1.4; /* Improved readability with proportional spacing */
+  margin: 0 0 15px 0; /* Increased bottom margin for better spacing */
+  color: #333; /* Subtle dark gray for better contrast */
+}
+
+.subsection h2 {
+  font-size: 32px; /* Added unit for proper interpretation */
+  font-weight: 700; /* Bold for better emphasis on section titles */
+  margin: 30px 0 20px 0; /* Added top margin for better spacing */
+  line-height: 1.4; /* Adjusted line-height for multi-line titles */
+  color: #000; /* Black for strong emphasis */
+  border-bottom: 2px solid #ddd; /* Optional underline for visual separation */
+  padding-bottom: 5px; /* Padding for the underline effect */
+}
+.subsection a {
+  text-decoration: none; /* Remove underline by default */
+  color: #007bff; /* Default link color (blue) */
+  font-weight: 500; /* Slightly bold for emphasis */
+  transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth hover transitions */
 }
 
 /* Sidebar */
@@ -17,7 +44,54 @@
   align-items: center;
   border-right: 1px solid #ddd;
 }
+/* Circle and text container */
+.circle-container {
+  display: flex;
+  flex-direction: column; /* Stack circle and text vertically */
+  align-items: center;
+}
+.container-class {
+  display: flex;
+  justify-content: space-around; /* Space evenly between items */
+  align-items: center;
+  padding: 20px 50px; /* Added padding for better spacing */
+}
 
+/* Circle styles */
+.circle {
+  width: 180px;
+  height: 120px;
+  background-color: #f8f8f8; /* Light gray background */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+  overflow: hidden; /* Ensure image stays within the circle */
+}
+
+/* Image styles */
+.circle-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire circle */
+}
+
+/* Text styles */
+.circle-text {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  margin-top: 20px; /* Space between circle and text */
+}
+.circle-text2 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000000;
+  text-align: center;
+  margin-top: 20px; /* Space between circle and text */
+}
 .sidebar-name {
   font-size: 3rem;
   margin: 0;
@@ -27,6 +101,7 @@
   /* position:absolute; */
   width: 150px; /* 设置宽度 */
   height: 150px; /* 设置高度 */
+  cursor: pointer; /* 鼠标悬停变为手型 */
   border-radius: 50%; /* 裁剪为圆形 */
   object-fit: cover; /* 确保图片比例不变，裁剪溢出部分 */
   display: block; /* 将图片变为块级元素 */
@@ -71,7 +146,7 @@
 /* Main Content */
 .main-content {
   flex: 3;
-  padding: 20px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
 }
@@ -106,11 +181,11 @@
   font-size: 1.5rem;
 }
 
-.bio p,
-.research ul {
-  font-size: 1rem;
-  line-height: 1.5;
+.subsubsection h2{
+  font-family: 'Courier New', monospace;
+  font-size: large;
 }
+
 
 .research ul {
   list-style-type: disc;

@@ -17,6 +17,7 @@
     width: 300px; /* 设置宽度 */
     height: 300px; /* 设置高度 */
     border-radius: 50%; /* 裁剪为圆形 */
+    cursor: pointer; /* 鼠标悬停变为手型 */
     object-fit: cover; /* 确保图片比例不变，裁剪溢出部分 */
     display: block; /* 将图片变为块级元素 */
     margin: 0 auto; /* 居中 */
