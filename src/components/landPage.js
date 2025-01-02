@@ -22,22 +22,84 @@ function LandPage() {
     const timer = setInterval(updateTime, 1000); // Update time every second
     return () => clearInterval(timer); // Cleanup interval on unmount
   }, []);
-
+const text = "Kangyu Feng";
+const randomizedIndices = text.split("").map((_, i) => i).sort(() => Math.random() - 0.5);
   return (
     
     <div className="app-container">
-      <div >
-          <motion.h1 className='title'
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            Kangyu Feng
-          </motion.h1>
-      </div>
-
+      <div className='head' >
       
+      <div className= "title">
+      {text.split("").map((char, index) => (
+        <motion.span
+          key={index}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: randomizedIndices[index] * 0.12 }}
 
+        >
+          {char}
+        </motion.span>
+      ))}
+    </div>
+      
+      <div
+        
+        style={{
+          height: "2px",
+          width: "100%",
+          background: "#000",
+          border: "none",
+          margin: "20px 0px 30px 0px",
+        }}
+      ></div>
+      <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1, delay: 2 }} 
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <motion.button
+      whileHover={{ scale: 1.05 }}
+        style={{
+          background: "none",
+          border: "none",
+          fontSize: "1.5rem",
+          fontWeight: "500",
+          color: "#000",
+          cursor: "pointer",
+          padding: "0 20px",
+        }}
+      >
+        Navigate
+      </motion.button>
+      <div
+        style={{
+          width: "1px",
+          height: "1.5rem",
+          backgroundColor: "#000", // Black vertical line
+        }}
+      ></div>
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        style={{
+          background: "none",
+          border: "none",
+          fontSize: "1.5rem",
+          fontWeight: "500",
+          color: "#000",
+          cursor: "pointer",
+          padding: "0 20px",
+        }}
+      >
+        Research
+      </motion.button>
+    </motion.div>
+    </div>
       <div className="terminal-container">
         {/* Terminal Header */}
         <div className="terminal-header">
@@ -63,7 +125,7 @@ function LandPage() {
                 },
             }}
             getBeforeInit={(instance) => {
-                instance.pause(500).type("echo \"Hey, I'm Kangyu!\"").pause(700);
+                instance.pause(2000).type("echo \"Hey, I'm Kangyu!\"").pause(700);
                 return instance;
             }}
             />
@@ -100,7 +162,7 @@ function LandPage() {
                 },
             }}
             getBeforeInit={(instance) => {
-                instance.pause(900).type("cat about-me.txt").pause(500);
+                instance.pause(1500).type("cat about-me.txt").pause(500);
                 return instance;
             }}
             />
