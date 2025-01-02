@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import TypeIt from "typeit-react";
 import './landPage.css';
+import {motion} from 'framer-motion';
 
 function LandPage() {
   const [currentTime, setCurrentTime] = useState('');
@@ -23,7 +24,20 @@ function LandPage() {
   }, []);
 
   return (
+    
     <div className="app-container">
+      <div >
+          <motion.h1 className='title'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            Kangyu Feng
+          </motion.h1>
+      </div>
+
+      
+
       <div className="terminal-container">
         {/* Terminal Header */}
         <div className="terminal-header">
@@ -59,7 +73,8 @@ function LandPage() {
             options={{
                 speed: 0.1,
                 nextStringDelay:0,
-                strings: ['`_```_````````````````___`_```````````', '|`|`|`|`___`_```_````|_`_(`)_`__`___``', "|`|_|`|/`_`\\`|`|`|````|`||/|`'_```_`\\`", '|``_``|``__/`|_|`|_```|`|``|`|`|`|`|`|', '|_|`|_|\\___|\\__,`(`)`|___|`|_|`|_|`|_|', '|`|/`/__`_`_|___/|/_`_`_```_`_```_|`|`', "|`'`//`_``|`'_`\\`/`_``|`|`|`|`|`|`|`|`", '|`.`\\`(_|`|`|`|`|`(_|`|`|_|`|`|_|`|_|`', '|_|\\_\\__,_|_|`|_|\\__,`|\\__,`|\\__,_(_)`', '`````````````````|___/`|___/``````````']
+                // this is the ASCII art with some spaces replaced by \u2007
+                strings: ['\u2007_\u2007\u2007\u2007_\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007___\u2007_\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007', '|\u2007|\u2007|\u2007|\u2007___\u2007_\u2007\u2007\u2007_\u2007\u2007\u2007\u2007|_\u2007_(\u2007)_\u2007__\u2007___\u2007\u2007', "|\u2007|_|\u2007|/\u2007_\u2007\\\u2007|\u2007|\u2007|\u2007\u2007\u2007\u2007|\u2007||/|\u2007'_\u2007\u2007\u2007_\u2007\\\u2007", '|\u2007\u2007_\u2007\u2007|\u2007\u2007__/\u2007|_|\u2007|_\u2007\u2007\u2007|\u2007|\u2007\u2007|\u2007|\u2007|\u2007|\u2007|\u2007|', '|_|\u2007|_|\\___|\\__,\u2007(\u2007)\u2007|___|\u2007|_|\u2007|_|\u2007|_|', '|\u2007|/\u2007/__\u2007_\u2007_|___/|/_\u2007_\u2007_\u2007\u2007\u2007_\u2007_\u2007\u2007\u2007_\u2007\u2007-\u2007', "|\u2007'\u2007//\u2007_\u2007\u2007|\u2007'_\u2007\\\u2007/\u2007_\u2007\u2007|\u2007|\u2007|\u2007|\u2007|\u2007|\u2007||\u2007|", '|\u2007.\u2007\\\u2007(_|\u2007|\u2007|\u2007|\u2007|\u2007(_|\u2007|\u2007|_|\u2007|\u2007|_|\u2007||_|', '|_|\\_\\__,_|_|\u2007|_|\\__,\u2007|\\__,\u2007|\\__,_/(_)', '\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007|___/\u2007|___/\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007']
                 ,
                 afterComplete: function (instance) {
                 setTimeout(() => {
@@ -99,7 +114,7 @@ function LandPage() {
                 breakLines: false,
                 nextStringDelay: [5000, 1000],
                 loopDelay: [1000, 5000],
-                strings: ["I majored in computer science at the Grainger College of Engineering @ UIUC and earned my Bachelor of Science degree with Highest Honors in May 2024.", "I will continue my journey in the MCS program as a graduate student starting Fall 2024.", "My fields of interest are mainly artificial intelligence/ machine learning, game development, and education in computer science."]
+                strings: ["I majored in computer science at the Grainger College of Engineering @ UIUC and earned my Bachelor of Science degree with Highest Honors in May 2024.", "I am currently enrolled in the MCS program as a graduate student starting in Fall 2024, conducting research on utilizing CS tools to improve non-CS elementary courses.", "My fields of interest are mainly artificial intelligence/ machine learning, game development, and education in computer science."]
             }}
             />
             </p>}

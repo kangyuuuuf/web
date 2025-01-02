@@ -5,12 +5,21 @@
     padding: 0;
   }
   
+  .title {
+    font-size: 4rem; /* 设置字体大小 */
+    text-align: center; /* 居中对齐 */
+    color: #333; /* 文字颜色 */
+    margin: 0; /* 去掉默认外边距 */
+    padding: 0; /* 去掉默认内边距 */
+    
+  }
   /* 让“终端”容器在屏幕正中 */
   .app-container {
     width: 100vw;
     height: 100vh;
     background-color: #f5f5f5;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
@@ -18,12 +27,14 @@
   /* 终端主体容器 */
   .terminal-container {
     width: 600px;
-    height: 400px;
+    height: 340px;
     background-color: #222;               /* 终端的黑色背景 */
+    margin: auto;
     color: #fff;                          /* 终端中文字颜色 */
     font-family: "Courier New", monospace;
     border-radius: 5px;
     text-align: left;
+
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   }
   
