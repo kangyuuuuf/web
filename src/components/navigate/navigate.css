@@ -1,0 +1,118 @@
+/* General Layout */
+.container {
+  display: flex;
+  height: 100vh;
+  font-family: "Arial", sans-serif;
+  color: #333;
+  background: #f8f8f8;
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid #ddd;
+}
+
+.sidebar-name {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.profile-image {
+  /* position:absolute; */
+  width: 150px; /* 设置宽度 */
+  height: 150px; /* 设置高度 */
+  border-radius: 50%; /* 裁剪为圆形 */
+  object-fit: cover; /* 确保图片比例不变，裁剪溢出部分 */
+  display: block; /* 将图片变为块级元素 */
+  margin: 20px auto; /* 居中 */
+  border: 3px solid #000000; /* 可选：添加边框 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 可选：添加阴影 */
+}
+
+.sidebar-title {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.sidebar-subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.sidebar-info {
+  display: flex; /* 使用 Flexbox 布局 */
+  flex-direction: column; /* 垂直排列内容 */
+  justify-content: space-between; /* 在垂直方向均匀分布 */
+  height: 80%; /* 确保容器高度填满父容器 */
+  padding: 60px 0 60px 0; /* 添加上下内边距 */
+  gap: 10px; /* 每个元素之间的小间距 */
+}
+
+.sidebar-info p {
+  font-size: 1rem; /* 字体大小 */
+  line-height: 1.8; /* 行高 */
+  color: #333; /* 默认文字颜色 */
+  cursor: pointer; /* 鼠标悬停变为手型 */
+  transition: color 0.3s ease, transform 0.3s ease; /* 平滑动画 */
+}
+
+.sidebar-info p:hover {
+  color: #007bff; /* 鼠标悬停时字体颜色变化 */
+  transform: translateX(5px); /* 鼠标悬停时轻微右移 */
+}
+
+/* Main Content */
+.main-content {
+  flex: 3;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 1rem;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.bio,
+.research {
+  margin-bottom: 20px;
+}
+
+.bio h2,
+.research h2 {
+  border-bottom: 2px solid #000;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.bio p,
+.research ul {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.research ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
