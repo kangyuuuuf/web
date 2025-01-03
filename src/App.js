@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import LandPage from './components/langPage/landPage'
 import Navigate from './components/navigate/navigate';
+import ResearchPage from './components/research/research';
 import {
   BrowserRouter as Router,
   Routes,
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandPage />} />
           <Route path="/navigate" element={<Navigate  />} />
+          <Route path="/research" element={<ResearchPage />} />
         </Routes>
     </Router>
   );

@@ -1,7 +1,11 @@
 import "./navigate.css";
 import { animate, delay, motion } from "framer-motion";
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useInView } from "react-intersection-observer";
+import { faEnvelope, faFile, faGlobe, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+
 
 function Navigate() {
   const containerVariants = {
@@ -64,19 +68,58 @@ function Navigate() {
         <motion.img
           whileHover={{ rotate: 10 }}
           onClick={() => (window.location.href = "/")}
-          src="/image.png" // Replace with your profile image URL
+          src="/image.png"
           className="profile-image"
         />
         <h2 className="sidebar-title">Kangyu Feng | 冯康宇</h2>
         <p className="sidebar-subtitle">Master of Computer Science</p>
         <div className="sidebar-info">
-          <p>📍 Champaign, IL</p>
-          <p>📧 Email</p>
-          <p>💻 GitHub</p>
-          <p>📚 Google Scholar</p>
-          <p>🔗 LinkedIn</p>
-          <p>🌐 Website</p>
-          <p>📄 Curriculum Vitae</p>
+        <a 
+          href="https://www.google.com/maps/place/Champaign,+IL" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon icon={faLocationDot}/> Champaign, IL
+        </a>
+        <a 
+          href="mailto:ericfeng0821@gmail.com" 
+          className="sidebar-link"
+        >
+          <FontAwesomeIcon icon={faEnvelope} /> Email
+        </a>
+        <a 
+          href="https://github.com/kangyuuuuf" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="sidebar-link"
+        >
+          <FontAwesomeIcon icon={faGithub} /> GitHub
+        </a>
+        <a 
+          href="https://www.linkedin.com/in/kangyuuuuf/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="sidebar-link"
+        >
+          <FontAwesomeIcon icon={faLinkedin} /> LinkedIn
+        </a>
+        <a 
+          href="/" 
+          target="_self" 
+          rel="noopener noreferrer"
+          className="sidebar-link"
+        >
+          <FontAwesomeIcon icon={faGlobe} /> Website
+        </a>
+        <a 
+          href="/cv.pdf" 
+          download= "Kangyu_Feng_CV.pdf"
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="sidebar-link"
+        >
+          <FontAwesomeIcon icon={faFile} /> Curriculum Vitae
+        </a>
         </div>
       </motion.div>
 
@@ -203,6 +246,7 @@ function Navigate() {
         </AnimatedElement>
       </section>
     </div>
+    
     </motion.div>
   );
 }

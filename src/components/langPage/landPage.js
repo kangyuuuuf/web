@@ -16,6 +16,14 @@ function LandPage() {
 
     }, 1000);
   };
+  const handleDetails = () => {
+    setNavigate(true); // 切换到新页面
+
+    setTimeout(() => {
+      window.location.href = "/research";
+
+    }, 1000);
+  };
 const text = "Kangyu Feng | 冯康宇";
 const randomizedIndices = text.split("").map((_, i) => i).sort(() => Math.random() - 0.5);
   return (
@@ -92,6 +100,7 @@ const randomizedIndices = text.split("").map((_, i) => i).sort(() => Math.random
           cursor: "pointer",
           padding: "0 20px",
         }}
+        onClick={handleDetails}
       >
         Details
       </motion.button>
