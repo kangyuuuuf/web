@@ -52,6 +52,7 @@
   flex-direction: column; /* Stack circle and text vertically */
   align-items: center;
 }
+
 .container-class {
   display: flex;
   justify-content: space-around; /* Space evenly between items */
@@ -151,7 +152,7 @@
   width: calc(100% - 320px);
   overflow-y: auto;
   flex: 3;
-  padding: 40px;
+  padding: 0 60px 0 60px;
   display: flex;
   flex-direction: column;
 }
