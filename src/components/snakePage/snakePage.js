@@ -4,7 +4,7 @@ import "./snakePage.css";
 function SnakePage() {
   return (
 <div
-  className="container"
+  className="container-game"
   style={{
     display: "flex",
     flexDirection: "column",
