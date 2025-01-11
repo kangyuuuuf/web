@@ -13,7 +13,7 @@ function SnakePage() {
     minHeight: "100vh",
   }}
 >
-  <h3>Whoops, 404 error! Looks like the page went missing. Or maybe it's not missing at all…</h3>
+  <h3>Whoops, 404 error!</h3>
   <iframe
     title="SnakeGame"
     src="/snake_game/snake.html"

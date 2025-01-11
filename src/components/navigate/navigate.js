@@ -126,7 +126,7 @@ function Navigate() {
       <div className="main-content">
       {/* Bio Section */}
       <section className="subsection" id="bio">
-        <AnimatedElement component="h2">Intro</AnimatedElement>
+        <AnimatedElement component="h2">Bio</AnimatedElement>
         <AnimatedElement>
           I majored in computer science at the Grainger College of Engineering @{" "}
           <motion.a

@@ -20,7 +20,7 @@ function LandPage() {
     setNavigate(true); // 切换到新页面
 
     setTimeout(() => {
-      window.location.href = "/research";
+      window.location.href = "/directory";
 
     }, 1000);
   };

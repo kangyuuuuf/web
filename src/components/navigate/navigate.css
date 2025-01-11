@@ -6,7 +6,13 @@
   background: #f8f8f8;
   font-family: Verdana, Geneva, sans-serif; font-size: 24px; font-style: normal;
 }
-
+.subsection{
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
 .subsection p {
   font-size: 18px; /* Adjusted for readability */
   font-style: normal; /* Default style */
@@ -18,9 +24,10 @@
 }
 
 .subsection h2 {
+  text-align: center;
   font-size: 32px; /* Added unit for proper interpretation */
   font-weight: 700; /* Bold for better emphasis on section titles */
-  margin: 10px 0 20px 0; /* Added top margin for better spacing */
+  margin: 10px 0 30px 0; /* Added top margin for better spacing */
   line-height: 1.4; /* Adjusted line-height for multi-line titles */
   color: #000; /* Black for strong emphasis */
   border-bottom: 2px solid #ddd; /* Optional underline for visual separation */
@@ -129,7 +136,7 @@
   flex-direction: column; /* 垂直排列内容 */
   justify-content: space-between; /* 在垂直方向均匀分布 */
   height: 80%; /* 确保容器高度填满父容器 */
-  padding: 60px 0 60px 0; /* 添加上下内边距 */
+  padding: 60px 0 200px 0; /* 添加上下内边距 */
   gap: 10px; /* 每个元素之间的小间距 */
 }
 
@@ -153,7 +160,7 @@
   width: calc(100% - 320px);
   overflow-y: auto;
   flex: 3;
-  padding: 0 60px 0 60px;
+  padding: 0 120px 0 120px;
   display: flex;
   flex-direction: column;
 }

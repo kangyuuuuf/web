@@ -4,6 +4,7 @@ import LandPage from './components/langPage/landPage'
 import Navigate from './components/navigate/navigate';
 import ResearchPage from './components/research/research';
 import SnakePage from './components/snakePage/snakePage';
+import Directory from './components/directory/DirectoryPage';
 import {
   BrowserRouter as Router,
   Routes,
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<LandPage />} />
           <Route path="/navigate" element={<Navigate  />} />
           <Route path="/research" element={<ResearchPage />} />
+          <Route path='/directory' element={<Directory />} />
           <Route path="*" element={<SnakePage/> } />
         </Routes>
     </Router>
