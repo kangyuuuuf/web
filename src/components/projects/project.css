@@ -1,0 +1,84 @@
+/* Reset basic margins/padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Container for the entire projects section */
+  .projects-container {
+    width: 100%;
+    max-width: 1200px; /* adapt as needed */
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+  
+  /* Title and subtitle */
+  .projects-container h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 2rem;
+  }
+  
+  /* Wrapper for all project cards */
+  .cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5rem;
+  }
+  
+  @media (max-width: 600px) {
+    .cards-wrapper {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Individual project card styling */
+  .project-card {
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    padding: 1.5rem;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* Card title */
+  .project-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  /* Meta info: category + date in a row */
+  .project-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .project-category {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .project-date {
+    color: #888;
+  }
+  
+  /* Bullets list */
+  .project-bullets {
+    list-style: disc inside;
+    line-height: 1.6;
+    color: #555;
+  }

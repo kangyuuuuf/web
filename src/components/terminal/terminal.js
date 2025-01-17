@@ -24,9 +24,10 @@ function Terminal() {
   }, []);
   return (
     
-    <div className="app-container">
 
-      <div className="terminal-container">
+      <motion.div className="terminal-container"    initial={{ opacity: 0}}
+      animate={{ opacity: 1}}
+      transition={{ duration: 0.5 }}>
         {/* Terminal Header */}
         <div className="terminal-header">
           <div className="terminal-buttons">
@@ -108,9 +109,7 @@ function Terminal() {
             </p>}
             
         </div>
-      </div>
-    </div>
-      
+      </motion.div>
   );
 }
 

@@ -1,0 +1,76 @@
+/* about.css */
+
+/* The overall container that holds both panels */
+.split-container {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 60px);
+  box-sizing: border-box;
+}
+
+/* Left Panel (buttons) */
+.left-panel {
+  width: 250px; /* Fixed width for the left panel */
+  height: 100%;
+  background-color: #f0f0f0; /* Subtle gray background */
+  display: flex;
+  justify-content: center; 
+  flex-direction: column;
+  align-items: center; /* Center the buttons horizontally */
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  border-right: 2px solid #e5e5e5; /* Light separator line */
+}
+
+/* Button styles */
+.left-panel button {
+  width: 100%;
+  background-color: #333; /* Dark background for contrast */
+  color: #fff; /* White text */
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease;
+}
+
+
+.left-panel button:hover {
+  background-color: #555; /* Slightly lighter color on hover */
+}
+
+/* Right Panel (content) */
+.right-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;      /* Make it a column layout */
+  justify-content: center;     /* Center content vertically */
+  align-items: flex-start;     /* Keep text left-aligned; 
+                                  use 'center' to center horizontally */
+  background-color: #ffffff;
+  padding: 2rem;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Container for the content within the right panel */
+.mid {
+  max-width: 700px; /* Control text width for better readability */
+  margin: 0 auto;   /* Center the text block if it’s narrower than the panel */
+}
+
+.mid h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.mid p {
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1rem;
+}

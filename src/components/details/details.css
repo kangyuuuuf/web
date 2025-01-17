@@ -1,0 +1,26 @@
+/* Reset or normalize base styles to ensure full height usage */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensures the body can stretch to 100vh */
+    font-family: Arial, sans-serif;
+  }
+  
+  /* The main container that holds the Navbar and the Routes */
+  .detailsContainer {
+    height: 100vh;    /* Fill the entire browser viewport height */
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /* If your Navbar component’s top-level div has className="navbar", 
+     you can fix its width (e.g. 250px) or use flex properties. */
+
+  
+  /* The main content (the routed components) should fill all remaining space */
+  .routesContainer {
+    flex: 1;               /* Takes up remaining space */
+    background-color: #fff;
+    box-sizing: border-box;
+    overflow-y: auto;      /* Scroll if content is taller than the viewport */
+  }
