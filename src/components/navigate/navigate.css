@@ -146,6 +146,7 @@
   line-height: 1.8; /* 行高 */
   color: #333; /* 默认文字颜色 */
   cursor: pointer; /* 鼠标悬停变为手型 */
+  margin: 15px 0; /* 上下间距 */
   transition: color 0.3s ease, transform 0.3s ease; /* 平滑动画 */
 }
 
