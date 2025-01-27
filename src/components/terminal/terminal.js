@@ -1,41 +1,47 @@
-import React, { useRef,useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect } from "react";
 import TypeIt from "typeit-react";
-import './terminal.css';
-import {motion} from 'framer-motion';
+import "./terminal.css";
+import { motion } from "framer-motion";
 
 function Terminal() {
-  const [currentTime, setCurrentTime] = useState('');
-  const [currentLog1, setCurrentLog1] = useState('');
-  const [currentLog2, setCurrentLog2] = useState('');
-  const [currentLog3, setCurrentLog3] = useState('');
-  const typeItRef = useRef(null);
+  const [currentTime, setCurrentTime] = useState("");
+  const [currentLog1, setCurrentLog1] = useState(false);
+  const [currentLog2, setCurrentLog2] = useState(false);
+  const [currentLog3, setCurrentLog3] = useState(false);
+
+  // Use an array ref to store multiple TypeIt instances
+  const typeItRefs = useRef([]);
+
   // Function to update current time
   useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      const hours = String(now.getHours()).padStart(2, '0');
-      const minutes = String(now.getMinutes()).padStart(2, '0');
-      const seconds = String(now.getSeconds()).padStart(2, '0');
-      setCurrentTime(`${hours}:${minutes}:${seconds}`);
-    };
+    try {
 
-    updateTime(); // Set the initial time
-    const timer = setInterval(updateTime, 1000); // Update time every second
-    return () => {
-      clearInterval(timer); 
-      if (typeItRef.current) {
-        console.log("what")
-        typeItRef.current.destroy();
-        typeItRef.current = null;
-      }
-    }// Cleanup interval on unmount
+      const updateTime = () => {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, "0");
+        const minutes = String(now.getMinutes()).padStart(2, "0");
+        const seconds = String(now.getSeconds()).padStart(2, "0");
+        setCurrentTime(`${hours}:${minutes}:${seconds}`);
+      };
+
+      updateTime(); // Set the initial time
+      const timer = setInterval(updateTime, 1000); // Update time every second
+
+      // Cleanup: clear interval and destroy all TypeIt instances
+      return () => {
+        clearInterval(timer);
+      };
+    } catch { }
   }, []);
-  return (
-    
 
-      <motion.div className="terminal-container"    initial={{ opacity: 0}}
-      animate={{ opacity: 1}}
-      transition={{ duration: 0.5 }}>
+  try {
+    return (
+      <motion.div
+        className="terminal-container"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         {/* Terminal Header */}
         <div className="terminal-header">
           <div className="terminal-buttons">
@@ -50,81 +56,99 @@ function Terminal() {
         <div className="terminal-body">
           <span className="prompt">user@localhost: </span>
           <span className="command">
-          <TypeIt
-            options={{
-                speed: 40,
+            <TypeIt
+              options={{
+                breakLines: true,
                 lifeLike: true,
-                afterComplete: function (instance) {
-                instance.destroy(); 
-                setCurrentLog1(true);
-                },
-            }}
-            getBeforeInit={(instance) => {
-                instance.pause(2000).type("echo \"Hey, I'm Kangyu!\"").pause(700);
-                return instance;
-            }}
+                strings: ['echo "Hey, I\'m Kangyu!"'],
+                speed: 10,
+                waitUntilVisible: true,
+                afterComplete: (instance) => {
+                  instance.pause()
+                  setTimeout(() => {
+                    setCurrentLog1(true);
+                    }, 1000);
+                }
+              }}
             />
-            </span>
-            { currentLog1 && <p className="command">
-                <TypeIt
-            options={{
-                speed: 0.1,
-                nextStringDelay:0,
-                // this is the ASCII art with some spaces replaced by \u2007
-                strings: ['\u2007_\u2007\u2007\u2007_\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007___\u2007_\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007', '|\u2007|\u2007|\u2007|\u2007___\u2007_\u2007\u2007\u2007_\u2007\u2007\u2007\u2007|_\u2007_(\u2007)_\u2007__\u2007___\u2007\u2007', "|\u2007|_|\u2007|/\u2007_\u2007\\\u2007|\u2007|\u2007|\u2007\u2007\u2007\u2007|\u2007||/|\u2007'_\u2007\u2007\u2007_\u2007\\\u2007", '|\u2007\u2007_\u2007\u2007|\u2007\u2007__/\u2007|_|\u2007|_\u2007\u2007\u2007|\u2007|\u2007\u2007|\u2007|\u2007|\u2007|\u2007|\u2007|', '|_|\u2007|_|\\___|\\__,\u2007(\u2007)\u2007|___|\u2007|_|\u2007|_|\u2007|_|', '|\u2007|/\u2007/__\u2007_\u2007_|___/|/_\u2007_\u2007_\u2007\u2007\u2007_\u2007_\u2007\u2007\u2007_\u2007\u2007-\u2007', "|\u2007'\u2007//\u2007_\u2007\u2007|\u2007'_\u2007\\\u2007/\u2007_\u2007\u2007|\u2007|\u2007|\u2007|\u2007|\u2007|\u2007||\u2007|", '|\u2007.\u2007\\\u2007(_|\u2007|\u2007|\u2007|\u2007|\u2007(_|\u2007|\u2007|_|\u2007|\u2007|_|\u2007||_|', '|_|\\_\\__,_|_|\u2007|_|\\__,\u2007|\\__,\u2007|\\__,_/(_)', '\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007|___/\u2007|___/\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007']
-                ,
-                beforeStep: function (instance) {
-                  typeItRef.current = instance;
-                },
-                afterComplete: function (instance) {
-                setTimeout(() => {
-                    instance.destroy(); // Destroy the instance after 2 seconds
-                    setCurrentLog2(true); // Trigger the next log
-                }, 700);
-                },
-            }}
-            />
-            </p>}
-        { currentLog2 && <span className="prompt">user@localhost: </span>}
-        { currentLog2 &&
-          
-          <span className="command">
-          <TypeIt
-            options={{
-                speed: 40,
-                lifeLike: true,
-                afterComplete: function (instance) {
-                instance.pause(500);
-                instance.destroy(); 
-                setCurrentLog3(true);
-                },
-            }}
-            getBeforeInit={(instance) => {
-                instance.pause(1500).type("cat about-me.txt").pause(500);
-                return instance;
-            }}
-            />
+          </span>
+          <div className="command">
+            {currentLog1 &&
+              <TypeIt
+                options={{
+                  strings: [
+                    // ASCII art (spaces replaced by \u2007 as needed)
+                    "\u2007_\u2007\u2007\u2007_\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007___\u2007_\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007",
+                    "|\u2007|\u2007|\u2007|\u2007___\u2007_\u2007\u2007\u2007_\u2007\u2007\u2007\u2007|_\u2007_(\u2007)_\u2007__\u2007___\u2007\u2007",
+                    "|\u2007|_|\u2007|/\u2007_\u2007\\\u2007|\u2007|\u2007|\u2007\u2007\u2007\u2007|\u2007||/|\u2007'_\u2007\u2007\u2007_\u2007\\\u2007",
+                    "|\u2007\u2007_\u2007\u2007|\u2007\u2007__/\u2007|_|\u2007|_\u2007\u2007\u2007|\u2007|\u2007\u2007|\u2007|\u2007|\u2007|\u2007|\u2007|",
+                    "|_|\u2007|_|\\___|\\__,\u2007(\u2007)\u2007|___|\u2007|_|\u2007|_|\u2007|_|",
+                    "|\u2007|/\u2007/__\u2007_\u2007_|___/|/_\u2007_\u2007_\u2007\u2007\u2007_\u2007_\u2007\u2007\u2007_\u2007\u2007-\u2007",
+                    "|\u2007'\u2007//\u2007_\u2007\u2007|\u2007'_\u2007\\\u2007/\u2007_\u2007\u2007|\u2007|\u2007|\u2007|\u2007|\u2007|\u2007||\u2007|",
+                    "|\u2007.\u2007\\\u2007(_|\u2007|\u2007|\u2007|\u2007|\u2007(_|\u2007|\u2007|_|\u2007|\u2007|_|\u2007||_|",
+                    "|_|\\_\\__,_|_|\u2007|_|\\__,\u2007|\\__,\u2007|\\__,_/(_)",
+                    "\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007|___/\u2007|___/\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007",
+                  ],
+                  speed: 0.1,
+                  nextStringDelay: 0,
+                  afterComplete: () => {
+                    // wait 5 seconds
+                    setTimeout(() => {
+                      setCurrentLog2(true);
+                    }, 1000);
+                  }
+                }}
+              />
+            }
+          </div>
+
+          {currentLog2 && <span className="prompt">user@localhost: </span>}
+          {currentLog2 &&
+            <span className="command">
+              <TypeIt
+                options={{
+                  strings: [
+                    // ASCII art (spaces replaced by \u2007 as needed)
+                    "cat about-me.txt",
+                  ],
+                  speed: 0.1,
+                  lifeLike: true,
+                  nextStringDelay: 0,
+                  waitUntilVisible: true,
+                  afterComplete: () => {
+                    setTimeout(() => {
+                      setCurrentLog3(true);
+                    }, 2000);
+                  }
+                }}
+              />
             </span>
           }
-          { currentLog3 && <p className="command">
-                <TypeIt
-            options={{
-                speed: 0.1,
-                loop: true,
-                breakLines: false,
-                nextStringDelay: [5000, 1000],
-                beforeStep: function (instance) {
-                  typeItRef.current = instance;
-                },
-                loopDelay: [1000, 5000],
-                strings: ["I majored in computer science at the Grainger College of Engineering @ UIUC and earned my Bachelor of Science degree with Highest Honors in May 2024.", "I am currently enrolled in the MCS program as a graduate student starting in Fall 2024, conducting research on utilizing CS tools to improve non-CS elementary courses.", "My fields of interest are mainly artificial intelligence/ machine learning, game development, and education in computer science."]
-            }}
-            />
-            </p>}
-            
+          {currentLog3 &&
+            <div className="command">
+              <TypeIt
+                options={{
+                  speed: 0.1,
+                  loop: true,
+                  breakLines: false,
+                  nextStringDelay: [5000, 1000],
+                  loopDelay: [1000, 5000],
+                  strings: [
+                    "I majored in computer science at the Grainger College of Engineering @ UIUC and earned my Bachelor of Science degree with Highest Honors in May 2024.",
+                    "I am currently enrolled in the MCS program as a graduate student starting in Fall 2024, conducting research on utilizing CS tools to improve non-CS elementary courses.",
+                    "My fields of interest are mainly artificial intelligence/machine learning, game development, and education in computer science.",
+                  ],
+                }}
+              />
+            </div>
+          }
         </div>
       </motion.div>
-  );
+    );
+  }
+  catch {
+    console.log("")
+  }
 }
 
 export default Terminal;

@@ -92,3 +92,11 @@
   .command {
     color: #ffffff;
   }
+
+  :root {
+    --ti-cursor-color: transparent;
+  }
+
+  .command .ti-cursor {
+    display: none;
+  }
