@@ -1,8 +1,10 @@
 
 
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion,AnimatePresence} from 'framer-motion';
 import './about.css';
+import {faEnvelope} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const About = () => {
   const [activeContent, setActiveContent] = useState('Education');
@@ -60,7 +62,16 @@ const About = () => {
         transition={{ duration: 0.5 }}
       >
         <h2>Contact</h2>
-        <p>kangyuf2[at]illinois[dot]edu / kangyuuuuf[at]gmail[dot]com</p>
+        <p style={{fontSize:"22px"}}>If you have any question or just wanna chat with me, use this google <motion.a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLScawvKCs5XuzSz-5HGlGB7np99YLGM9n4DPfiCu_lmORh0ewQ/viewform?usp=dialog"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ color: "#0056b3" }}
+                    style={{ display: "inline", color: "#007bff", transition: "color 0.3s ease", textDecoration: "none" }}
+                  >
+                    form
+                  </motion.a> to schedule a meeting with me!</p>
+        <p style={{fontSize:"22px"}}>Email <FontAwesomeIcon icon={faEnvelope} />: kangyuf2[at]illinois.edu {' '}{' '}{' '}{' '} |  {' '}{' '}{' '}{' '} kangyuuuuf[at]gmail[dot]com</p>
       </motion.div>
     ),
     Donation: (
@@ -72,12 +83,22 @@ const About = () => {
         transition={{ duration: 0.5 }}
       >
         <h2>Donation</h2>
-        <p>
+        <p style={{fontSize:"22px"}}>
           As I began receiving my salary as an undergraduate course assistant, I made a conscious
           decision to set aside funds specifically to support the growth and development of children
           monthly. It's a privilege to contribute to their well-being and provide them with
           opportunities that will shape their futures.
         </p>
+        <div class="donation-button-container">
+          <a 
+            href="https://www.unicef.cn/en" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="donate-button"
+          >
+            Donate!
+          </a>
+        </div>
       </motion.div>
     ),
   };
@@ -97,14 +118,21 @@ const About = () => {
       </motion.div>
 
       {/* Right Panel */}
-      <motion.div
-        className="right-panel"
-        initial={{ x: 100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.5 }}
-      >
-        {content[activeContent]}
-      </motion.div>
+        <AnimatePresence mode="wait">
+          {/* 
+              The 'key' makes React treat each content as a new component 
+              when activeContent changes, so it re-mounts. 
+          */}
+          <motion.div className='right-panel'
+            key={activeContent}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {content[activeContent]}
+          </motion.div>
+        </AnimatePresence>
     </div>
   );
 };

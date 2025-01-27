@@ -229,20 +229,16 @@ function Navigate() {
           >
             Dr. Mariana Silva
           </motion.a>{" "}
-          on the{" "}
-          <motion.a
+          on the project—which focuses on utilizing computer science tools to enhance non-CS elementary courses, Calculas I. The project includes to 1) deploy the homework content to {" "}
+           <motion.a
             href="https://ae3.grainger.illinois.edu/holding/grants-for-the-advancement-of-teaching-engineering-gate"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ color: "#0056b3" }}
             style={{ display: "inline", color: "#007bff", transition: "color 0.3s ease" }}
           >
-            GATE
-          </motion.a>{" "}
-          project—which focuses on creating a new curriculum for CS 101, a large-scale introductory
-          course with students from various engineering majors—emphasizing the significance of
-          detecting changes in students’ psychological states and providing appropriate emotional
-          support.
+            PriarieLearn
+          </motion.a> to support mastery-based learning and meet the course’s growing demand and 2) conduct research on the analysis of student performance data between non-engineering student and engineering student to improve the course’s content and structure.
         </AnimatedElement>
       </section>
     </div>

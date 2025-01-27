@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./research.css";
+import {faPaperPlane} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function ResearchPage() {
-  const [showText, setShowText] = useState(true);
+  // Initially hide the text
+  const [showText, setShowText] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowText(false); // 在 5 秒后隐藏文字
-    }, 5000);
-
-    return () => clearTimeout(timer); // 清理计时器
-  }, []);
+  // Toggle function for button
+  const handleButtonClick = () => {
+    setShowText((prev) => !prev);
+  };
 
   return (
     <div className="research-container">
@@ -19,25 +19,25 @@ function ResearchPage() {
         {showText && (
           <motion.div
             className="center-text"
-            initial={{ opacity: 0 }} // 初始状态
-            animate={{ opacity: 1 }} // 动画目标状态
-            exit={{ opacity: 0,  }} // 淡出动画
-            transition={{ duration: 2 }} // 动画时长
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }} 
+            transition={{ duration: 2 }} 
           >
             <p>
-              "My deepest gratitude to Professor Mariana Silva for her </p>
+              "My deepest gratitude to Professor Mariana Silva for her 
+            </p>
             <p>
               unwavering support, invaluable opportunities, and thoughtful guidance, as well as immensely grateful to Yuxuan and everyone who supported, helped, and enlightened me during my academic journey."
-            </p>    
+            </p>
             <div
-        
-                style={{
+              style={{
                 height: "2px",
                 width: "20%",
                 margin: "20px auto 40px auto",
                 background: "#696969",
                 border: "none",
-                }}
+              }}
             ></div>
             <p>
               -谨此以感谢Mariana Silva教授、宇轩以及其他所有在我求学道路上帮助过我的人-
@@ -45,6 +45,15 @@ function ResearchPage() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {!showText && (
+        <h3>NYN Research Group...</h3>
+      )}
+
+      {/* Fixed button at the bottom-right corner */}
+      <FontAwesomeIcon icon={faPaperPlane} className="fixed-button" onClick={handleButtonClick}>
+        {showText ? "Hide Text" : "Show Text"}
+      </FontAwesomeIcon>
     </div>
   );
 }

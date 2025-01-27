@@ -1,6 +1,6 @@
 .research-container {
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 100px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,14 +10,29 @@
   overflow: hidden;
 }
 
-.center-text {
-  text-align: center;
+.fixed-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  /* Style the button as desired */
+  padding: 10px 16px;
+  cursor: pointer;
+  background-color: #434343; 
+  border: none;
+  border-radius: 4px;
+  color: #fff;
 }
-
+.center-text {
+  width: 80%;
+  position: absolute;    /* or fixed */
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .center-text p  {
   font-family: "Comic Sans MS", cursive, sans-serif;
-  
-  width: 80%;
+  width: 100%;
   font-size: 1.5rem;
   margin: auto;
   color: #696969;

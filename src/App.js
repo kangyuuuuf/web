@@ -13,9 +13,6 @@ import {
 function App() {
   return (
     <Router>
-        <p>
-        Still renovating the site, please come back later!
-        </p>
         <Routes>
           <Route path="/" element={<LandPage />} />
           <Route path="/navigate" element={<Navigate  />} />

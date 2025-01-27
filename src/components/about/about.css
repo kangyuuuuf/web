@@ -141,3 +141,24 @@ p {
 .related-courses b {
   font-weight: bold;
 }
+.donation-button-container {
+  text-align: center;  /* 水平居中 */
+  margin-top: 20px;    /* 可根据需要调整外边距 */
+}
+
+.donate-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #007ff5;  /* 可自行更换按钮颜色 */
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+/* 悬停时的按钮交互动效 */
+.donate-button:hover {
+  background-color: #ff4081;
+}
