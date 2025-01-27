@@ -61,7 +61,8 @@ function Terminal() {
                 breakLines: true,
                 lifeLike: true,
                 strings: ['echo "Hey, I\'m Kangyu!"'],
-                speed: 10,
+                speed: 40,
+                lifeLike: true,
                 waitUntilVisible: true,
                 afterComplete: (instance) => {
                   instance.pause()
@@ -90,6 +91,7 @@ function Terminal() {
                     "\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007|___/\u2007|___/\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007\u2007",
                   ],
                   speed: 0.1,
+                  lifeLike: true,
                   nextStringDelay: 0,
                   afterComplete: () => {
                     // wait 5 seconds
@@ -111,7 +113,7 @@ function Terminal() {
                     // ASCII art (spaces replaced by \u2007 as needed)
                     "cat about-me.txt",
                   ],
-                  speed: 0.1,
+                  speed: 40,
                   lifeLike: true,
                   nextStringDelay: 0,
                   waitUntilVisible: true,
@@ -130,6 +132,7 @@ function Terminal() {
                 options={{
                   speed: 0.1,
                   loop: true,
+                  lifeLike: true,
                   breakLines: false,
                   nextStringDelay: [5000, 1000],
                   loopDelay: [1000, 5000],
