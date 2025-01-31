@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion,AnimatePresence} from 'framer-motion';
 import './about.css';
-import {faEnvelope} from "@fortawesome/free-solid-svg-icons";
+import {faEnvelope, faEye, faHeart} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const About = () => {
@@ -99,6 +99,19 @@ const About = () => {
             Donate!
           </a>
         </div>
+        <p style={{fontSize:"22px"}}>Be My Eyes -  Help to make the world more accessible for blind and low-vision people</p>
+        <div class="donation-button-container">
+
+          <a 
+            href="https://www.bemyeyes.com/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="donate-button"
+          >
+            <FontAwesomeIcon icon={faEye} /> Help!
+          </a>
+        </div>
+
       </motion.div>
     ),
   };
@@ -114,7 +127,7 @@ const About = () => {
       >
         <button onClick={() => setActiveContent('Education')}>Education</button>
         <button onClick={() => setActiveContent('Contact')}>Contact</button>
-        <button onClick={() => setActiveContent('Donation')}>Donation</button>
+        <button onClick={() => setActiveContent('Donation')}><FontAwesomeIcon icon={faHeart} /></button>
       </motion.div>
 
       {/* Right Panel */}

@@ -144,6 +144,7 @@ p {
 .donation-button-container {
   text-align: center;  /* 水平居中 */
   margin-top: 20px;    /* 可根据需要调整外边距 */
+  margin-bottom: 20px;
 }
 
 .donate-button {
