@@ -34,7 +34,9 @@ function Navigate() {
     { id: 4, time: "2024.08", info: "Started MCS program at UIUC" },
     { id: 5, time: "2024.09", info: "Got Graduate Research Assitantship" },
     { id: 6, time: "2025.01", info: "Got 50% Graduate Research Assistantship and 50% Teaching Assitantship" },
-    { id: 7, time: "2025.05", info: "Incoming Summer Intern @ PriarieLearn" },
+    { id: 7, time: "2025.02", info: "One Paper as 3rd Author Accepted to ASEE Annual Conference, ✈️Montreal in June!" },
+    { id: 8, time: "2025.05", info: "Incoming Summer Intern @ PriarieLearn" },
+    
 
     
   ];

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./research.css";
-import {faPaperPlane} from "@fortawesome/free-solid-svg-icons";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function ResearchPage() {
@@ -13,10 +13,35 @@ function ResearchPage() {
     setShowText((prev) => !prev);
   };
 
+  const data = [
+    {
+      title: "Implementing a Tool for Structured Roles in Hybrid Collaborative Learning Environments",
+      conference: "ASEE 2025 Annual Conference & Exposition, June 2025",
+      authors: [
+        { name: "Victor Zhao" },
+        { name: "Yuxuan Chen" },
+        { name: "Kangyu Feng", boldItalic: true },
+        { name: "Mariana Silva" },
+      ],
+      link: "https://www.asee.org/home",
+    },
+    {
+      title: "A Comprehensive Redesign of CS1 for Engineering Students",
+      conference: "ASEE 2025 Annual Conference & Exposition, June 2025",
+      authors: [
+        { name: "Yuxuan Chen" },
+        { name: "Victor Zhao" },
+        { name: "Kangyu Feng", boldItalic: true },
+        { name: "Mariana Silva" },
+      ],
+      link: "https://www.asee.org/home",
+    }
+  ];
+
   return (
     <div className="research-container">
       <AnimatePresence>
-        {showText && (
+        {showText ? (
           <motion.div
             className="center-text"
             initial={{ opacity: 0 }} 
@@ -43,12 +68,38 @@ function ResearchPage() {
               -谨此以感谢Mariana Silva教授、宇轩以及其他所有在我求学道路上帮助过我的人-
             </p>
           </motion.div>
+        ) : (
+          <motion.div className="publications-container"             
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }} 
+            transition={{ duration: 2 }} >
+            <h2>Publications</h2>
+            <hr />
+            {data.map((publication, index) => (
+              <div key={index} className="publication">
+                <h3>{publication.title}</h3>
+                <p className="conference">
+                  <i>
+                    <a href={publication.link} target="_blank" rel="noopener noreferrer">
+                      {publication.conference}
+                    </a>
+                  </i>
+                </p>
+                <p className="authors">
+                  {publication.authors.map((author, i) => (
+                    <span key={i}>
+                      {author.boldItalic ? <b><i>{author.name}</i></b> : author.name}
+                      {i < publication.authors.length - 1 ? ", " : ""}
+                    </span>
+                  ))}
+                </p>
+                {index < data.length - 1}
+              </div>
+            ))}
+          </motion.div>
         )}
       </AnimatePresence>
-
-      {!showText && (
-        <h3>NYN Research Group...</h3>
-      )}
 
       {/* Fixed button at the bottom-right corner */}
       <FontAwesomeIcon icon={faPaperPlane} className="fixed-button" onClick={handleButtonClick}>
