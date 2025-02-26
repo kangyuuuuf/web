@@ -21,21 +21,23 @@ function ResearchPage() {
         { name: "Victor Zhao" },
         { name: "Yuxuan Chen" },
         { name: "Kangyu Feng", boldItalic: true },
+        { name: "Geoffrey L Herman"},
+        { name: "Matthew West" },
         { name: "Mariana Silva" },
       ],
       link: "https://www.asee.org/home",
     },
-    {
-      title: "A Comprehensive Redesign of CS1 for Engineering Students",
-      conference: "ASEE 2025 Annual Conference & Exposition, June 2025",
-      authors: [
-        { name: "Yuxuan Chen" },
-        { name: "Victor Zhao" },
-        { name: "Kangyu Feng", boldItalic: true },
-        { name: "Mariana Silva" },
-      ],
-      link: "https://www.asee.org/home",
-    }
+  //   {
+  //     title: "A Comprehensive Redesign of CS1 for Engineering Students",
+  //     conference: "ASEE 2025 Annual Conference & Exposition, June 2025",
+  //     authors: [
+  //       { name: "Yuxuan Chen" },
+  //       { name: "Victor Zhao" },
+  //       { name: "Kangyu Feng", boldItalic: true },
+  //       { name: "Mariana Silva" },
+  //     ],
+  //     link: "https://www.asee.org/home",
+  //   }
   ];
 
   return (
@@ -97,6 +99,9 @@ function ResearchPage() {
                 {index < data.length - 1}
               </div>
             ))}
+            <div style={{ height: "8px" }}></div> 
+            <h2>Ongoing Project</h2>
+            <hr />
           </motion.div>
         )}
       </AnimatePresence>
