@@ -42,9 +42,10 @@ function ResearchPage() {
 
   return (
     <div className="research-container">
-      <AnimatePresence>
+      <AnimatePresence mode="wait">
         {showText ? (
           <motion.div
+            key="gratitude-text"
             className="center-text"
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
@@ -71,7 +72,8 @@ function ResearchPage() {
             </p>
           </motion.div>
         ) : (
-          <motion.div className="publications-container"             
+          <motion.div className="publications-container"
+            key="publications-content"     
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
             exit={{ opacity: 0 }} 
@@ -102,8 +104,33 @@ function ResearchPage() {
             <div style={{ height: "8px" }}></div> 
             <h2>Ongoing Project</h2>
             <hr />
-          </motion.div>
-        )}
+            <div className="publication">
+              <div className="authors">
+                        I am currently working with my mentor,{" "}
+                        <motion.a
+                          href="https://mfsilva.web.illinois.edu/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ color: "#0056b3" }}
+                          style={{ display: "inline", color: "#007bff", transition: "color 0.3s ease" }}
+                        >
+                          Dr. Mariana Silva
+                        </motion.a>{" "}
+                        on the project—which focuses on utilizing computer science tools to enhance non-CS elementary courses, Calculus II. The project includes 
+                        1) deploying the homework content to {" "}
+                        <motion.a
+                          href="https://ae3.grainger.illinois.edu/holding/grants-for-the-advancement-of-teaching-engineering-gate"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ color: "#0056b3" }}
+                          style={{ display: "inline", color: "#007bff", transition: "color 0.3s ease" }}
+                        >
+                          PriarieLearn
+                        </motion.a> to support mastery-based learning and meet the course’s growing demand and 2) conducting research on the analysis of student performance data between non-engineering students and engineering students to improve the course’s content and structure.
+              </div>
+            </div>
+          </motion.div>)
+          }
       </AnimatePresence>
 
       {/* Fixed button at the bottom-right corner */}
