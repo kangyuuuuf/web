@@ -28,7 +28,7 @@ export default function Chat() {
     setIsLoading(true);
     // send to backend
     axios.post(
-      'http://127.0.0.1:5000/chat',
+      'https://chatbot-kangyu-81e6c969ccac.herokuapp.com/chat',
       newHistory
     ) 
       .then((res) => {
