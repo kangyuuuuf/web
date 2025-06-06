@@ -121,7 +121,7 @@ export default function Chat() {
   }} >{chat.content}</ReactMarkdown>
   
               {chat.role === 'assistant' ? (<React.Fragment>
-                <hr className="cite-divider"/>
+                {chat.citation.length > 0 && <hr className="cite-divider"/>}
                 {chat.citation.map((c, idx) => 
               
                 <div key={idx}>[ {idx}  ]  {c.source} {c.page}</div> 
