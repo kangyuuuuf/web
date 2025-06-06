@@ -119,8 +119,14 @@ export default function Chat() {
       <li style={{ margin: '0.2em 0' }} {...props} />
     )
   }} >{chat.content}</ReactMarkdown>
-              {chat.role === 'assistant' ? chat.citation.map((c, idx) => 
-                <div key={idx}>[ {idx}  ]  {c.source} {c.page}</div>) : ''}
+  
+              {chat.role === 'assistant' ? (<React.Fragment>
+                <hr className="cite-divider"/>
+                {chat.citation.map((c, idx) => 
+              
+                <div key={idx}>[ {idx}  ]  {c.source} {c.page}</div> 
+                )}
+                </React.Fragment>) : ''}
               
             </div>
 

@@ -121,3 +121,8 @@
     cursor: not-allowed;        /* 鼠标悬停时显示禁止指针 */
     opacity: 0.6;               /* 轻微透明，显得不可交互 */
   }
+  .cite-divider {
+    margin:  10px 0px 10px 0px; 
+    border: 1px dashed #ffffff;
+    width: 100%;
+  }
