@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './chat.css';
 import ReactMarkdown from 'react-markdown'
-
+import {animate, motion} from 'framer-motion';
 export default function Chat() {
   const [message, setMessage] = useState('');
   const [chatHistory, setChatHistory] = useState([]);
@@ -52,9 +52,26 @@ export default function Chat() {
       });
     setMessage('');
   };
+  const text = "AI Chatbot for INFO 390";
+  const randomizedIndices = text.split("").map((_, i) => i).sort(() => Math.random() - 0.5);
 
   return (
     <div className="drawer-container">
+      
+      <div className= "chat-title">
+      {text.split("").map((char, index) => (
+        <motion.span
+          key={index}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: randomizedIndices[index] * 0.12 }}
+
+        >
+          {char}
+        </motion.span>
+      ))}
+    </div>
+      <hr className="chat-divider"/>
       <div
         className="chatbox"
         style={{ height: chatboxHeight }}
@@ -65,8 +82,10 @@ export default function Chat() {
           .map((chat, idx) => (
             <React.Fragment key={idx}>
       {/* Show the robot emoji if it’s an assistant message */}
-      {chat.role === 'assistant' && (
-        <div className="left">🤖--|</div>
+      {chat.role === 'user' ? (
+        <div className="right">|-- 🤓</div>
+      ) : (
+        <div className="left">|-- 🤖</div>
       )}
             <div
               className={
@@ -104,9 +123,7 @@ export default function Chat() {
                 <div key={idx}>[ {idx}  ]  {c.source} {c.page}</div>) : ''}
               
             </div>
-            {chat.role === 'assistant' && (
-        <div className="right">|-- 🤓</div>
-      )}
+
             </React.Fragment>
           ))}
       </div>
