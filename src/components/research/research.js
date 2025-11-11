@@ -57,7 +57,7 @@ function ResearchPage() {
               "My deepest gratitude to Professor Mariana Silva for her 
             </p>
             <p>
-              unwavering support, invaluable opportunities, and thoughtful guidance, as well as immensely grateful to Yuxuan and everyone who supported, helped, and enlightened me during my academic journey."
+              unwavering support, invaluable opportunities, and thoughtful guidance, as well as immensely grateful to Yuxuan and Victor and everyone who supported, helped, and enlightened me during my academic journey."
             </p>
             <div
               style={{
@@ -69,7 +69,7 @@ function ResearchPage() {
               }}
             ></div>
             <p>
-              -谨此以感谢Mariana Silva教授、宇轩以及其他所有在我求学道路上帮助过我的人-
+              -谨此以感谢Mariana Silva教授、宇轩、Victor以及其他所有在我求学道路上帮助过我的人-
             </p>
           </motion.div>
         ) : (
