@@ -15,6 +15,19 @@ function ResearchPage() {
 
   const data = [
     {
+      title: "Exploring LLMs for Generating Erroneous Examples in CS1",
+      conference: "SIGCSE Technical Symposium 2026",
+      authors: [
+        { name: "Yuxuan Chen" },
+        { name: "Chenyan Zhao" },
+        { name: "Kangyu Feng", boldItalic: true },
+        { name: "Junyu Zhang" },
+        { name: "Vedan Malhotra" },
+        { name: "Mariana Silva" },
+      ],
+      link: "https://sigcse2026.sigcse.org/",
+    },
+    {
       title: "Implementing a Tool for Structured Roles in Hybrid Collaborative Learning Environments",
       conference: "ASEE 2025 Annual Conference & Exposition, June 2025",
       authors: [
