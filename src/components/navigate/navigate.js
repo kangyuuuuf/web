@@ -132,8 +132,8 @@ function Navigate() {
 
       <div className="main-content">
       {/* Bio Section */}
-      <section className="subsection" id="bio">
-        <AnimatedElement component="h2">Bio</AnimatedElement>
+      <section className="subsection" id="about">
+        <AnimatedElement component="h2" style={{ textAlign: "left" }}>About</AnimatedElement>
         <AnimatedElement>
           I majored in computer science at the Grainger College of Engineering @{" "}
           <motion.a
@@ -179,7 +179,7 @@ function Navigate() {
 
       {/* Updates Section */}
       <section className="subsection" id="updates">
-        <AnimatedElement component="h2">Updates</AnimatedElement>
+        <AnimatedElement component="h2" style={{ textAlign: "left" }}>Updates</AnimatedElement>
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -202,7 +202,7 @@ function Navigate() {
 
       {/* Research Interests Section */}
       <section className="subsection" id="research">
-        <AnimatedElement component="h2">Education in Computer Science</AnimatedElement>
+        <AnimatedElement component="h2" style={{ textAlign: "left" }}>Education in Computer Science</AnimatedElement>
         <AnimatedElement>
           Besides learning how fundamental data structures and algorithms function, my teaching
           experience at Grainger College of Engineering also reinforced my commitment to creating an

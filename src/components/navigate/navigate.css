@@ -4,7 +4,7 @@
   height: 100vh;
   color: #333;
   background: #f8f8f8;
-  font-family: Verdana, Geneva, sans-serif; font-size: 24px; font-style: normal;
+  font-family: Avenir, sans-serif; font-size: 24px; font-style: normal;
 }
 .subsection{
   display: flex;
@@ -183,22 +183,23 @@
   text-decoration: underline;
 }
 
-.bio,
+.about,
 .research {
   margin-bottom: 20px;
 }
 
-.bio h2,
+.about h2,
 .research h2 {
   border-bottom: 2px solid #000;
-  display: inline-block;
+  display: flex;
+  text-align: left;
   margin-bottom: 10px;
   font-size: 1.5rem;
 }
 
 .subsubsection h2{
-  font-family: 'Courier New', monospace;
-  font-size: large;
+  font-family: 'Avenir', sans-serif;
+  font-size: 2rem;
 }
 
 

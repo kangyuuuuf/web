@@ -5,9 +5,9 @@
   justify-content: center;
   align-items: center;
   background-color: #f5f5f5;
-  font-family: "Arial", sans-serif;
+  font-family: "Avenir", sans-serif;
   position: relative;
-  overflow: hidden;
+  overflow: scroll;
   flex-direction: column;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .center-text p {
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: "Avenir", sans-serif;
   width: 100%;
   font-size: 1.5rem;
   margin: auto;
@@ -42,14 +42,14 @@
 }
 
 .publications-container {
-  font-family: Arial, sans-serif;
-  background: white;
+  font-family: "Avenir", sans-serif;
   padding: 20px;
   border-radius: 8px;
   width: 80%;
-  height: 80%;
+  /* padding-top: 5%; */
+  height: 100%;
   margin: auto;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: scroll;
 }
 
 .publication {
