@@ -21,8 +21,8 @@
 }
 
 .theme-toggle-btn-fixed:hover {
-  background-color: #f39c12;
-  border-color: #f39c12;
+  background-color: #0066cc;
+  border-color: #0066cc;
   color: #ffffff;
   transform: rotate(15deg) scale(1.1);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
