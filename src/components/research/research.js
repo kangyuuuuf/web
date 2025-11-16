@@ -33,7 +33,7 @@ function ResearchPage() {
       title: "Implementing a Tool for Structured Roles in Hybrid Collaborative Learning Environments",
       conference: "ASEE 2025 Annual Conference & Exposition, June 2025",
       authors: [
-        { name: "Victor Zhao" },
+        { name: "Chenyan Zhao" },
         { name: "Yuxuan Chen" },
         { name: "Kangyu Feng", boldItalic: true },
         { name: "Geoffrey L Herman"},
@@ -47,7 +47,7 @@ function ResearchPage() {
       conference: "ASEE 2025 Annual Conference & Exposition, June 2025",
       authors: [
         { name: "Yuxuan Chen" },
-        { name: "Victor Zhao" },
+        { name: "Chenyan Zhao" },
         { name: "Kangyu Feng", boldItalic: true },
         { name: "Matthew West" },
         { name: "Mariana Silva" },
