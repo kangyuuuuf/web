@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useTheme } from '../../contexts/ThemeContext';
 import './Navbar.css';
 
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
+  const location = useLocation();
   
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -47,17 +48,27 @@ const Navbar = () => {
       </div>
       <div className="navbar-right-container">
         <motion.ul className="navbar-right">
-          {menuItems.map((item, index) => (
-            <motion.li 
-              key={index} 
-              className="navbar-item"
-              variants={itemVariants}
-            >
-              <Link to={item.to} className="navbar-link">
-                {item.label}
-              </Link>
-            </motion.li>
-          ))}
+          {menuItems.map((item, index) => {
+            // 精确匹配或路径以 item.to 开头
+            const isActive = location.pathname === item.to || 
+              location.pathname.startsWith(item.to) && item.to !== '/details/';
+            // 特殊处理 Main 页面：匹配 /details 或 /details/
+            const isMainActive = item.to === '/details/' && 
+              (location.pathname === '/details' || location.pathname === '/details/');
+            const active = isActive || isMainActive;
+            return (
+              <motion.li 
+                key={index} 
+                className="navbar-item"
+                variants={itemVariants}
+              >
+                <Link to={item.to} className={`navbar-link ${active ? 'active' : ''}`}>
+                  {item.label}
+                  {active && <span className="indicator"></span>}
+                </Link>
+              </motion.li>
+            );
+          })}
         </motion.ul>
         <motion.button
           className={`theme-toggle-btn ${theme === 'dark' ? 'dark-mode' : ''}`}

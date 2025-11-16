@@ -53,10 +53,39 @@
   transition: color 0.3s ease;
   font-weight: 500;
   font-family: "Avenir", sans-serif;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
 }
 
 .navbar-link:hover {
   color: #0066cc;
+}
+
+/* Active link indicator */
+.navbar-link.active {
+  color: #0066cc;
+}
+
+.navbar-link.active .indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #0066cc;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
 }
 
 /* Theme Toggle Button */
@@ -110,6 +139,14 @@
 
 .navbar.dark-mode .navbar-link:hover {
   color: #f39c12;
+}
+
+.navbar.dark-mode .navbar-link.active {
+  color: #f39c12;
+}
+
+.navbar.dark-mode .navbar-link.active .indicator {
+  background-color: #f39c12;
 }
 
 .navbar.dark-mode .theme-toggle-btn {
