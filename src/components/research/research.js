@@ -3,8 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import "./research.css";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTheme } from '../../contexts/ThemeContext';
 
 function ResearchPage() {
+  const { theme } = useTheme();
   // Initially hide the text
   const [showText, setShowText] = useState(false);
 
@@ -55,7 +57,7 @@ function ResearchPage() {
   ];
 
   return (
-    <div className="research-container">
+    <div className={`research-container ${theme === 'dark' ? 'dark-mode' : ''}`}>
       <AnimatePresence mode="wait">
         {showText ? (
           <motion.div
@@ -77,7 +79,7 @@ function ResearchPage() {
                 height: "2px",
                 width: "20%",
                 margin: "20px auto 40px auto",
-                background: "#696969",
+                background: theme === 'dark' ? "#b0b0b0" : "#696969",
                 border: "none",
               }}
             ></div>
@@ -125,8 +127,8 @@ function ResearchPage() {
                           href="https://mfsilva.web.illinois.edu/"
                           target="_blank"
                           rel="noopener noreferrer"
-                          whileHover={{ color: "#0056b3" }}
-                          style={{ display: "inline", color: "#007bff", transition: "color 0.3s ease" }}
+                          whileHover={{ color: theme === 'dark' ? "#ffb84d" : "#0056b3" }}
+                          style={{ display: "inline", color: theme === 'dark' ? "#f39c12" : "#007bff", transition: "color 0.3s ease" }}
                         >
                           Dr. Mariana Silva
                         </motion.a>{" "}
@@ -136,8 +138,8 @@ function ResearchPage() {
                           href="https://ae3.grainger.illinois.edu/holding/grants-for-the-advancement-of-teaching-engineering-gate"
                           target="_blank"
                           rel="noopener noreferrer"
-                          whileHover={{ color: "#0056b3" }}
-                          style={{ display: "inline", color: "#007bff", transition: "color 0.3s ease" }}
+                          whileHover={{ color: theme === 'dark' ? "#ffb84d" : "#0056b3" }}
+                          style={{ display: "inline", color: theme === 'dark' ? "#f39c12" : "#007bff", transition: "color 0.3s ease" }}
                         >
                           PriarieLearn
                         </motion.a> to support mastery-based learning and meet the course’s growing demand and 2) conducting research on the analysis of student performance data between non-engineering students and engineering students to improve the course’s content and structure.

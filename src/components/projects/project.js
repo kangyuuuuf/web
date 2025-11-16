@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTheme } from '../../contexts/ThemeContext';
 import './project.css';
 
 const projectsData = [
@@ -94,8 +95,10 @@ const cardVariants = {
 };
 
 export default function Projects() {
+  const { theme } = useTheme();
+  
   return (
-    <div className="projects-container">
+    <div className={`projects-container ${theme === 'dark' ? 'dark-mode' : ''}`}>
       <h1>Projects</h1>
         <h2 className='subtitle'>- kangyuuuuf -</h2>
       {/* 3) Parent motion.div controlling the stagger */}
@@ -107,7 +110,7 @@ export default function Projects() {
       >
         {projectsData.map((project, index) => (
           <motion.div
-            className="project-card"ƒ
+            className="project-card"
             key={index}
             variants={cardVariants}  // Each child card uses these variants
           >

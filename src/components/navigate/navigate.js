@@ -5,9 +5,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useInView } from "react-intersection-observer";
 import { faEnvelope, faFile, faGlobe, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { useTheme } from '../../contexts/ThemeContext';
+import ThemeToggle from '../themeToggle/ThemeToggle';
 
 
 function Navigate() {
+  const { theme } = useTheme();
   const containerVariants = {
     hidden: { opacity: 1 },
     visible: {
@@ -67,7 +70,7 @@ function Navigate() {
 
   return (
     <motion.div
-      className="container"
+      className={`container ${theme === 'dark' ? 'dark-mode' : ''}`}
     >
       {/* Sidebar Section */}
       <motion.div className="sidebar"       initial={{ opacity: 0 }}
@@ -140,8 +143,8 @@ function Navigate() {
             href="https://illinois.edu/"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ color: "#0056b3" }}
-            style={{ display: "inline", color: "#007bff", transition: "color 0.3s ease" }}
+            whileHover={{ color: "#ffb84d" }}
+            style={{ display: "inline", color: "#f39c12", transition: "color 0.3s ease" }}
           >
             UIUC
           </motion.a>{" "}
@@ -153,8 +156,8 @@ function Navigate() {
             href="https://mfsilva.web.illinois.edu/"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ color: "#0056b3" }}
-            style={{ display: "inline", color: "#007bff", transition: "color 0.3s ease" }}
+            whileHover={{ color: "#ffb84d" }}
+            style={{ display: "inline", color: "#f39c12", transition: "color 0.3s ease" }}
           >
             Mariana Silva
           </motion.a>{" "}
@@ -168,8 +171,8 @@ function Navigate() {
             href="https://publish.illinois.edu/computingedresearch/"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ color: "#0056b3" }}
-            style={{ display: "inline", color: "#007bff", transition: "color 0.3s ease" }}
+            whileHover={{ color: "#ffb84d" }}
+            style={{ display: "inline", color: "#f39c12", transition: "color 0.3s ease" }}
           >
             computer science education
           </motion.a>
@@ -192,7 +195,7 @@ function Navigate() {
               className="timeline"
               variants={itemVariants}
             >
-              <span>>> {update.time}</span>
+              <span>{'>>> '}{update.time}</span>
               <span style={{ display: "inline-block", width: "4ch" }}></span>
               <span>{update.info}</span>
             </motion.p>
@@ -231,8 +234,8 @@ function Navigate() {
             href="https://mfsilva.web.illinois.edu/"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ color: "#0056b3" }}
-            style={{ display: "inline", color: "#007bff", transition: "color 0.3s ease" }}
+            whileHover={{ color: "#ffb84d" }}
+            style={{ display: "inline", color: "#f39c12", transition: "color 0.3s ease" }}
           >
             Dr. Mariana Silva
           </motion.a>{" "}
@@ -241,15 +244,15 @@ function Navigate() {
             href="https://ae3.grainger.illinois.edu/holding/grants-for-the-advancement-of-teaching-engineering-gate"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ color: "#0056b3" }}
-            style={{ display: "inline", color: "#007bff", transition: "color 0.3s ease" }}
+            whileHover={{ color: "#ffb84d" }}
+            style={{ display: "inline", color: "#f39c12", transition: "color 0.3s ease" }}
           >
             PriarieLearn
           </motion.a> to support mastery-based learning and meet the course’s growing demand and 2) conducting research on the analysis of student performance data between non-engineering students and engineering students to improve the course’s content and structure.
         </AnimatedElement>
       </section>
     </div>
-    
+    <ThemeToggle />
     </motion.div>
   );
 }

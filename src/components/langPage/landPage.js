@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import TypeIt from "typeit-react";
 import './landPage.css';
-
+import { useTheme } from '../../contexts/ThemeContext';
+import ThemeToggle from '../themeToggle/ThemeToggle';
 import {animate, motion} from 'framer-motion';
 
 function LandPage() {
+  const { theme } = useTheme();
   const [navigate, setNavigate] = useState(false);
   const elementRef = useRef(null);
 
@@ -28,7 +30,7 @@ const text = "Kangyu Feng | 冯康宇";
 const randomizedIndices = text.split("").map((_, i) => i).sort(() => Math.random() - 0.5);
   return (
     
-    <div className="app-container">
+    <div className={`app-container ${theme === 'dark' ? 'dark-mode' : ''}`}>
     <motion.img ref={elementRef} className='circular-image' 
       whileHover={{ rotate: 10 }}
       src="/image.png" alt="Kangyu Feng" onClick={() => window.location.href = "/"}  animate={navigate ? { opacity: 0} : {} } transition={{ duration: 0.5 }} />
@@ -48,11 +50,11 @@ const randomizedIndices = text.split("").map((_, i) => i).sort(() => Math.random
     </div>
       
       <div
-        
+        className="divider-line"
         style={{
           height: "2px",
           width: "100%",
-          background: "#000",
+          background: theme === 'dark' ? "#ffffff" : "#000",
           border: "none",
           margin: "20px 0px 30px 0px",
         }}
@@ -74,7 +76,7 @@ const randomizedIndices = text.split("").map((_, i) => i).sort(() => Math.random
           border: "none",
           fontSize: "1.5rem",
           fontWeight: "500",
-          color: "#000",
+          color: theme === 'dark' ? "#ffffff" : "#000",
           cursor: "pointer",
           padding: "0 20px",
         }}
@@ -86,7 +88,7 @@ const randomizedIndices = text.split("").map((_, i) => i).sort(() => Math.random
         style={{
           width: "2px",
           height: "1.5rem",
-          backgroundColor: "#000", // Black vertical line
+          backgroundColor: theme === 'dark' ? "#ffffff" : "#000",
         }}
       ></div>
       <motion.button
@@ -96,7 +98,7 @@ const randomizedIndices = text.split("").map((_, i) => i).sort(() => Math.random
           border: "none",
           fontSize: "1.5rem",
           fontWeight: "500",
-          color: "#000",
+          color: theme === 'dark' ? "#ffffff" : "#000",
           cursor: "pointer",
           padding: "0 20px",
         }}
@@ -105,8 +107,9 @@ const randomizedIndices = text.split("").map((_, i) => i).sort(() => Math.random
         Details
       </motion.button>
     </motion.div>
-    </motion.div>
+      </motion.div>
       {/* <Terminal /> */}
+      <ThemeToggle />
     </div>
       
   );

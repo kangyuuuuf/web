@@ -2,8 +2,10 @@ import React, { useRef, useState, useEffect } from "react";
 import TypeIt from "typeit-react";
 import "./terminal.css";
 import { motion } from "framer-motion";
+import { useTheme } from '../../contexts/ThemeContext';
 
 function Terminal() {
+  const { theme } = useTheme();
   const [currentTime, setCurrentTime] = useState("");
   const [currentLog1, setCurrentLog1] = useState(false);
   const [currentLog2, setCurrentLog2] = useState(false);
@@ -37,7 +39,7 @@ function Terminal() {
   try {
     return (
       <motion.div
-        className="terminal-container"
+        className={`terminal-container ${theme === 'dark' ? 'dark-mode' : ''}`}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}

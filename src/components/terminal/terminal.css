@@ -100,3 +100,49 @@
   .command .ti-cursor {
     display: none;
   }
+
+  /* Dark Mode for Terminal (黑色 - 晚上) */
+  .terminal-container.dark-mode {
+    background-color: #0a0a0a;
+    color: #fff;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3), 0 10px 40px rgba(0, 0, 0, 0.5);
+  }
+
+  .terminal-container.dark-mode .terminal-header {
+    background-color: #1a1a1a;
+  }
+
+  .terminal-container.dark-mode .terminal-title {
+    color: #e0e0e0;
+  }
+
+  .terminal-container.dark-mode .prompt {
+    color: #4ade80; /* 更亮的绿色 */
+  }
+
+  .terminal-container.dark-mode .command {
+    color: #f0f0f0;
+  }
+
+  /* Light Mode for Terminal (浅灰色 - 白天) */
+  .terminal-container:not(.dark-mode) {
+    background-color: #f5f5f5;
+    color: #333;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3), 0 10px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .terminal-container:not(.dark-mode) .terminal-header {
+    background-color: #e8e8e8;
+  }
+
+  .terminal-container:not(.dark-mode) .terminal-title {
+    color: #333;
+  }
+
+  .terminal-container:not(.dark-mode) .prompt {
+    color: #28a745; /* 绿色提示符 */
+  }
+
+  .terminal-container:not(.dark-mode) .command {
+    color: #333;
+  }

@@ -35,7 +35,7 @@
     font-family: 'Avenir', sans-serif;
 
   }
-  /* 让“终端”容器在屏幕正中 */
+  /* 让"终端"容器在屏幕正中 */
   .app-container {
     width: 100vw;
     height: 100vh;
@@ -44,5 +44,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.3s ease;
   }
+
+  /* Dark Mode for LandPage */
+  .app-container.dark-mode {
+    background-color: #1a1a1a;
+  }
+
+  .app-container.dark-mode .title {
+    color: #ffffff;
+  }
+
+  .app-container.dark-mode .circular-image {
+    border: 3px solid #ffffff;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+  }
+
   

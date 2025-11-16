@@ -11,6 +11,7 @@
   top: 0;
   z-index: 1000;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Website Name Styling */
@@ -21,6 +22,13 @@
   cursor: pointer;
   color: #000000;
   text-transform: uppercase;
+}
+
+/* Right-Side Container */
+.navbar-right-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 /* Right-Side Menu Styling */
@@ -49,6 +57,69 @@
 
 .navbar-link:hover {
   color: #f39c12;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  background: none;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  padding: 0;
+  color: #000000;
+}
+
+.theme-toggle-btn:hover {
+  background-color: #f39c12;
+  border-color: #f39c12;
+  color: #ffffff;
+  transform: rotate(15deg);
+}
+
+.theme-toggle-btn.dark-mode {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.theme-toggle-btn.dark-mode:hover {
+  background-color: #f39c12;
+  border-color: #f39c12;
+  color: #ffffff;
+}
+
+/* Dark Mode for Navbar */
+.navbar.dark-mode {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.navbar.dark-mode .website-name {
+  color: #ffffff;
+}
+
+.navbar.dark-mode .navbar-link {
+  color: #e0e0e0;
+}
+
+.navbar.dark-mode .navbar-link:hover {
+  color: #f39c12;
+}
+
+.navbar.dark-mode .theme-toggle-btn {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.navbar.dark-mode .theme-toggle-btn:hover {
+  background-color: #f39c12;
+  border-color: #f39c12;
 }
 
 /* Responsive Styling */

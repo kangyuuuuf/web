@@ -5,6 +5,7 @@
   color: #333;
   background: #f8f8f8;
   font-family: Avenir, sans-serif; font-size: 24px; font-style: normal;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .subsection{
   display: flex;
@@ -35,9 +36,13 @@
 }
 .subsection a {
   text-decoration: none; /* Remove underline by default */
-  color: #000000; 
+  color: #f39c12; /* 统一黄色 */
   font-weight: 500; /* Slightly bold for emphasis */
   transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth hover transitions */
+}
+
+.subsection a:hover {
+  color: #ffb84d; /* 鼠标悬停时更亮的黄色 */
 }
 
 /* Sidebar */
@@ -65,6 +70,8 @@
   justify-content: space-around; /* Space evenly between items */
   align-items: center;
   padding: 20px 50px; /* Added padding for better spacing */
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  gap: 30px; /* Add gap between items */
 }
 
 /* Circle styles */
@@ -206,4 +213,130 @@
 .research ul {
   list-style-type: disc;
   padding-left: 20px;
+}
+
+/* Dark Mode for Navigate */
+.container.dark-mode {
+  background: #1a1a1a;
+  color: #e0e0e0;
+}
+
+.container.dark-mode .sidebar {
+  background: #2d2d2d;
+  border-right: 1px solid #404040;
+}
+
+.container.dark-mode .sidebar-title {
+  color: #ffffff;
+}
+
+.container.dark-mode .sidebar-subtitle {
+  color: #b0b0b0;
+}
+
+.container.dark-mode .sidebar-info a {
+  color: #d0d0d0;
+}
+
+.container.dark-mode .sidebar-info a:hover {
+  color: #f39c12;
+}
+
+.container.dark-mode .profile-image {
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.container.dark-mode .main-content {
+  background: #1a1a1a;
+}
+
+.container.dark-mode .subsection h2 {
+  color: #ffffff;
+  border-bottom: 2px solid #404040;
+}
+
+.container.dark-mode .subsection p {
+  color: #d0d0d0;
+}
+
+.container.dark-mode .subsection a {
+  color: #f39c12;
+}
+
+.container.dark-mode .subsection a:hover {
+  color: #ffb84d;
+}
+
+.container.dark-mode .circle {
+  background-color: #2d2d2d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.container.dark-mode .circle-text {
+  color: #ffffff;
+}
+
+.container.dark-mode .circle-text2 {
+  color: #b0b0b0;
+}
+
+.container.dark-mode .timeline {
+  color: #d0d0d0;
+}
+
+/* Responsive Design for Teaching Assistant Section */
+@media (max-width: 1200px) {
+  .container-class {
+    padding: 20px 30px;
+    gap: 40px;
+  }
+  
+  .circle {
+    width: 160px;
+    height: 107px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container-class {
+    padding: 20px 20px;
+    gap: 30px;
+    justify-content: center; /* Center items on smaller screens */
+  }
+  
+  .circle {
+    width: 140px;
+    height: 93px;
+  }
+  
+  .circle-text {
+    font-size: 1.2rem;
+  }
+  
+  .circle-text2 {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container-class {
+    padding: 20px 10px;
+    gap: 25px;
+  }
+  
+  .circle {
+    width: 120px;
+    height: 80px;
+  }
+  
+  .circle-text {
+    font-size: 1rem;
+    margin-top: 15px;
+  }
+  
+  .circle-text2 {
+    font-size: 0.85rem;
+    margin-top: 10px;
+  }
 }

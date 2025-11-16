@@ -9,6 +9,7 @@
   position: relative;
   overflow: scroll;
   flex-direction: column;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .fixed-button {
@@ -82,4 +83,52 @@ b i {
 
 .publications-container h2 {
   margin-top: 20px;
+}
+
+/* Dark Mode for Research */
+.research-container.dark-mode {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+.research-container.dark-mode .publications-container {
+  background-color: transparent;
+}
+
+.research-container.dark-mode h2 {
+  color: #ffffff;
+}
+
+.research-container.dark-mode h3 {
+  color: #ffffff;
+}
+
+.research-container.dark-mode .authors {
+  color: #d0d0d0;
+}
+
+.research-container.dark-mode .publication a {
+  color: #f39c12;
+}
+
+.research-container.dark-mode .publication a:hover {
+  color: #ffb84d;
+}
+
+.research-container.dark-mode .center-text p {
+  color: #b0b0b0;
+}
+
+.research-container.dark-mode .fixed-button {
+  background-color: #2d2d2d;
+  color: #ffffff;
+  border: 1px solid #404040;
+}
+
+.research-container.dark-mode .fixed-button:hover {
+  background-color: #3d3d3d;
+}
+
+.research-container.dark-mode hr {
+  border-color: #404040;
 }

@@ -10,6 +10,7 @@
   font-size: 24px;
   font-style: normal;
   color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Content wrapper */
@@ -458,4 +459,136 @@
     flex-direction: column;
     gap: 20px;
   }
+}
+
+/* Dark Mode for About */
+.single-page-container.dark-mode {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+.single-page-container.dark-mode .content-section h2 {
+  color: #ffffff;
+  border-bottom: 2px solid #404040;
+}
+
+.single-page-container.dark-mode .education-card {
+  background: #2d2d2d;
+  border: 1px solid #404040;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.single-page-container.dark-mode .education-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.single-page-container.dark-mode .education-header {
+  border-bottom: 1px solid #404040;
+}
+
+.single-page-container.dark-mode .education-header h3 {
+  color: #ffffff;
+}
+
+.single-page-container.dark-mode .education-date {
+  color: #b0b0b0;
+}
+
+.single-page-container.dark-mode .education-card .degree {
+  color: #d0d0d0;
+}
+
+.single-page-container.dark-mode .education-details .gpa,
+.single-page-container.dark-mode .education-details .deans-list {
+  color: #d0d0d0;
+}
+
+.single-page-container.dark-mode .education-details .honors {
+  color: #ffffff;
+}
+
+.single-page-container.dark-mode .teaching-experience {
+  border-top: 1px solid #404040;
+}
+
+.single-page-container.dark-mode .teaching-title {
+  color: #d0d0d0;
+}
+
+.single-page-container.dark-mode .course-list li {
+  color: #b0b0b0;
+}
+
+.single-page-container.dark-mode .assistantship-info {
+  border-top: 1px solid #404040;
+}
+
+.single-page-container.dark-mode .assistantship-item {
+  color: #d0d0d0;
+}
+
+.single-page-container.dark-mode .research-mentor {
+  color: #b0b0b0;
+}
+
+.single-page-container.dark-mode .hobby-info h3 {
+  color: #ffffff;
+}
+
+.single-page-container.dark-mode .hobby-info p {
+  color: #d0d0d0;
+}
+
+.single-page-container.dark-mode .video-container {
+  background: #2d2d2d;
+  border: 2px dashed #404040;
+}
+
+.single-page-container.dark-mode .email-info {
+  background: #2d2d2d;
+  border-left: 3px solid #f39c12;
+}
+
+.single-page-container.dark-mode .email-info span {
+  color: #d0d0d0;
+}
+
+.single-page-container.dark-mode .support-card {
+  background: #2d2d2d;
+  border: 1px solid #404040;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.single-page-container.dark-mode .support-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.single-page-container.dark-mode .support-card-content p {
+  color: #d0d0d0;
+}
+
+.single-page-container.dark-mode .support-subtitle {
+  color: #b0b0b0;
+}
+
+.single-page-container.dark-mode .support-button {
+  background-color: #3d3d3d;
+  color: #ffffff !important;
+}
+
+.single-page-container.dark-mode .support-button:hover {
+  background-color: #4d4d4d;
+  color: #ffffff !important;
+}
+
+.single-page-container.dark-mode .content-section p {
+  color: #d0d0d0;
+}
+
+.single-page-container.dark-mode .content-section a {
+  color: #f39c12;
+}
+
+.single-page-container.dark-mode .content-section a:hover {
+  color: #ffb84d;
 }

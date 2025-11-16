@@ -24,3 +24,12 @@ html, body {
     box-sizing: border-box;
     overflow-y: auto;      /* Scroll if content is taller than the viewport */
   }
+
+  /* Dark Mode for Details Container */
+  .detailsContainer.dark-mode {
+    background-color: #1a1a1a;
+  }
+
+  .routesContainer.dark-mode {
+    background-color: #1a1a1a;
+  }

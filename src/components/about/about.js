@@ -5,10 +5,13 @@ import { motion } from 'framer-motion';
 import './about.css';
 import {faEnvelope, faEye} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTheme } from '../../contexts/ThemeContext';
 
 const About = () => {
+  const { theme } = useTheme();
+  
   return (
-    <div className="single-page-container">
+    <div className={`single-page-container ${theme === 'dark' ? 'dark-mode' : ''}`}>
       <motion.div
         className="content-wrapper"
         initial={{ opacity: 0 }}
@@ -60,12 +63,12 @@ const About = () => {
                     <strong>Graduate Research Assistant</strong> (Sep. 2024 - Present)
                   </p>
                   <p className="research-mentor">
-                    Working with <motion.a
+                    Working with                     <motion.a
                       href="https://mfsilva.web.illinois.edu/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ color: "#0056b3" }}
-                      style={{ display: "inline", color: "#007bff", transition: "color 0.3s ease", textDecoration: "none" }}
+                      whileHover={{ color: theme === 'dark' ? "#ffb84d" : "#0056b3" }}
+                      style={{ display: "inline", color: theme === 'dark' ? "#f39c12" : "#007bff", transition: "color 0.3s ease", textDecoration: "none" }}
                     >
                       Prof. Mariana Silva
                     </motion.a> on utilizing CS tools to improve non-CS elementary courses
@@ -156,12 +159,12 @@ const About = () => {
         <div className="content-section">
           <h2>Contact</h2>
           <div className="contact-content">
-            <p>If you have any question or just wanna chat with me, use this google <motion.a
+            <p>If you have any question or just wanna chat with me, use this google                       <motion.a
                         href="https://docs.google.com/forms/d/e/1FAIpQLScawvKCs5XuzSz-5HGlGB7np99YLGM9n4DPfiCu_lmORh0ewQ/viewform?usp=dialog"
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ color: "#0056b3" }}
-                        style={{ display: "inline", color: "#007bff", transition: "color 0.3s ease", textDecoration: "none" }}
+                        whileHover={{ color: theme === 'dark' ? "#ffb84d" : "#0056b3" }}
+                        style={{ display: "inline", color: theme === 'dark' ? "#f39c12" : "#007bff", transition: "color 0.3s ease", textDecoration: "none" }}
                       >
                         form
                       </motion.a> to schedule a meeting with me!</p>
