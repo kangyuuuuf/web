@@ -1,89 +1,183 @@
 /* about.css */
 
-/* The overall container that holds both panels */
-.split-container {
-  display: flex;
+/* Single page container */
+.single-page-container {
   width: 100%;
-  height: calc(100vh - 100px);
+  min-height: calc(100vh - 100px);
   box-sizing: border-box;
-}
-
-/* Left Panel (buttons) */
-.left-panel {
-  width: 20%; /* Fixed width for the left panel */
-  height: 100%;
-  background-color: #f0f0f0; /* Subtle gray background */
-  display: flex;
-  justify-content: center; 
-  flex-direction: column;
-  align-items: center; /* Center the buttons horizontally */
-  padding: 2rem 1rem;
-  box-sizing: border-box;
-  border-right: 2px solid #e5e5e5; /* Light separator line */
-}
-
-/* Button styles */
-.left-panel button {
-  width: 60%;
-  background-color: #333; /* Dark background for contrast */
-  color: #fff; /* White text */
-  margin: 1rem 0;
-  padding: 0.75rem;
-  font-size: 18px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 1px;
-  transition: background-color 0.3s ease;
-}
-
-
-.left-panel button:hover {
-  background-color: #555; /* Slightly lighter color on hover */
-}
-
-/* Right Panel (content) */
-.right-panel {
-  flex: 1;
-  display: flex;
-  flex-direction: column;      /* Make it a column layout */
-  justify-content: center;     /* Center content vertically */
-  align-items: flex-start;     /* Keep text left-aligned; 
-                                  use 'center' to center horizontally */
-  background-color: #ffffff;
-  padding: 2rem;
-  height: 100%;
-  box-sizing: border-box;
-}
-
-/* Container for the content within the right panel */
-.mid {
-  max-width: 800px; /* Control text width for better readability */
-  width: 80%;
-  margin: 0 auto;   /* Center the text block if it’s narrower than the panel */
-}
-#column-container {
-  display: flex;
-  justify-content: space-between;
-}
-.mid h2 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  background-color: transparent;
+  font-family: Avenir, sans-serif;
+  font-size: 24px;
+  font-style: normal;
   color: #333;
 }
 
-.mid p {
+/* Content wrapper */
+.content-wrapper {
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;
+  box-sizing: border-box;
+}
+
+/* Content sections with spacing - matching navigate subsection style */
+.content-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.content-section:first-child {
+  margin-top: 0;
+}
+
+.content-section:last-child {
+  margin-bottom: 0;
+}
+
+.content-section h2 {
+  text-align: left;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 30px 0;
+  line-height: 1.4;
+  color: #000;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+
+/* Education Grid */
+.education-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.education-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.education-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.education-header h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+  flex: 1;
+  border-bottom: none;
+}
+
+.education-date {
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+  white-space: nowrap;
+  margin-left: 20px;
+}
+
+.education-card .degree {
+  font-size: 18px;
+  margin: 0 0 20px 0;
+  color: #333;
+  font-style: italic;
+}
+
+.education-details {
+  margin-top: 15px;
+}
+
+.education-details .gpa,
+.education-details .deans-list,
+.education-details .honors {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.education-details .honors {
+  color: #000;
+  font-weight: 600;
+}
+
+.teaching-experience {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.teaching-title {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.course-list {
+  margin: 10px 0 0 0;
+  padding-left: 25px;
+  list-style-type: disc;
+}
+
+.course-list li {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.assistantship-info {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.assistantship-item {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.research-mentor {
+  margin: 8px 0 15px 20px;
+  font-size: 16px;
   line-height: 1.6;
   color: #555;
-  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.education-section {
+  margin-bottom: 20px;
+}
+
+.education-content {
+  margin-top: 10px;
 }
 
 .education-container {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Avenir', sans-serif;
   margin: 20px;
   line-height: 1.6;
+  text-align: left;
 }
 
 .section-title {
@@ -100,35 +194,219 @@
   margin-top: 10px;
 }
 
-.university h3 {
-  font-size: 24px;
-  font-weight: bold;
-  width: 100%;
-  border-bottom: 2px solid #000;
-  margin: 0;
+/* Hobby Section */
+.hobby-content {
+  margin-top: 10px;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
 }
 
-.university p {
-  font-size: 20px;
-  margin: 5px 0;
-  font-style: italic;
+.hobby-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.hobby-info h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+  color: #000;
+}
+
+.hobby-info p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  margin: 0 0 15px 0;
+}
+
+.hobby-info p:last-child {
+  margin-bottom: 0;
+}
+
+.video-container {
+  flex: 1;
+  min-width: 0;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 2px dashed #ddd;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #999;
+  position: relative;
+}
+
+.video-container:empty::before {
+  content: "视频位置 - 可以在这里添加视频";
+  font-size: 16px;
+}
+
+.video-container video,
+.video-container iframe {
+  width: 100%;
+  max-width: 100%;
+  max-height: 400px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: none;
+  display: block;
+  object-fit: contain;
+}
+
+.video-container:not(:empty) {
+  border: none;
+  background: transparent;
+  padding: 0;
+  min-height: auto;
+}
+
+/* Contact Section */
+.contact-content {
+  margin-top: 10px;
+}
+
+.email-info {
+  margin-top: 20px;
+  padding: 20px 15px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+}
+
+.email-info p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.email-info span {
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+}
+
+/* Support Section */
+.support-cards {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.support-card {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.support-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.support-card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.support-card-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  margin: 0 0 20px 0;
+  flex: 1;
+}
+
+.support-subtitle {
+  font-size: 18px;
+  color: #555;
+  margin: 0 0 20px 0 !important;
+}
+
+.support-actions {
+  margin-top: auto;
+  text-align: center;
+}
+
+.support-button {
+  display: inline-block;
+  padding: 14px 32px;
+  background-color: #555;
+  color: #ffffff !important;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.support-button:hover {
+  background-color: #444;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.support-button svg {
+  margin-right: 8px;
 }
 
 .date {
   float: right;
   font-style: normal;
-  font-size: 14px;
+  font-size: 18px;
   color: #555;
 }
 
 .gpa,
 .deans-list {
-  margin: 2px 0;
+  margin: 0 0 15px 0;
   font-size: 18px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #333;
 }
-p {
+
+.content-section p {
   font-size: 18px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0 0 15px 0;
+  color: #333;
 }
+
+.content-section a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.content-section a:hover {
+  color: #0056b3;
+}
+
 .gpa {
   font-weight: bold;
 }
@@ -141,25 +419,43 @@ p {
 .related-courses b {
   font-weight: bold;
 }
-.donation-button-container {
-  text-align: center;  /* 水平居中 */
-  margin-top: 20px;    /* 可根据需要调整外边距 */
-  margin-bottom: 20px;
-}
 
-.donate-button {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #007ff5;  /* 可自行更换按钮颜色 */
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 25px;
-  font-weight: 600;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: background-color 0.3s ease;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-wrapper {
+    width: 90%;
+    padding: 20px 0;
+  }
 
-/* 悬停时的按钮交互动效 */
-.donate-button:hover {
-  background-color: #ff4081;
+  .education-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .education-header {
+    flex-direction: column;
+  }
+
+  .education-date {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .content-section h2 {
+    font-size: 28px;
+  }
+
+  .hobby-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .video-container {
+    min-height: 250px;
+  }
+
+  .support-cards {
+    flex-direction: column;
+    gap: 20px;
+  }
 }

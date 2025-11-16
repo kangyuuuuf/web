@@ -4,6 +4,15 @@ import './project.css';
 
 const projectsData = [
   {
+    title: "Hybrid Distributed File System (HyDFS)",
+    category: "Distributed Systems",
+    dates: "Jan. 2025 – May 2025",
+    bullets: [
+      "Developed HyDFS, a hybrid distributed file system inspired by HDFS and Cassandra, integrating consistent hashing and replication across a cluster to ensure scalability and fault tolerance.",
+      "Implemented append, merge, and re-replication protocols supporting per-client ordering, eventual consistency, and automatic data rebalancing under node failures."
+    ]
+  },
+  {
     title: "Focused Object Detection Based on 3D Reconstruction",
     category: "Computer Vision",
     dates: "Oct. 2024 – Dec. 2024",
