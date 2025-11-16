@@ -184,8 +184,8 @@ function Navigate() {
             href="https://illinois.edu/"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ color: "#ffb84d" }}
-            style={{ display: "inline", color: "#f39c12", transition: "color 0.3s ease" }}
+            whileHover={{ color: theme === 'dark' ? "#ffb84d" : "#4da6ff" }}
+            style={{ display: "inline", color: theme === 'dark' ? "#f39c12" : "#007bff", transition: "color 0.3s ease" }}
           >
             UIUC
           </motion.a>{" "}
@@ -197,8 +197,8 @@ function Navigate() {
             href="https://mfsilva.web.illinois.edu/"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ color: "#ffb84d" }}
-            style={{ display: "inline", color: "#f39c12", transition: "color 0.3s ease" }}
+            whileHover={{ color: theme === 'dark' ? "#ffb84d" : "#4da6ff" }}
+            style={{ display: "inline", color: theme === 'dark' ? "#f39c12" : "#007bff", transition: "color 0.3s ease" }}
           >
             Mariana Silva
           </motion.a>{" "}
@@ -212,8 +212,8 @@ function Navigate() {
             href="https://publish.illinois.edu/computingedresearch/"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ color: "#ffb84d" }}
-            style={{ display: "inline", color: "#f39c12", transition: "color 0.3s ease" }}
+            whileHover={{ color: theme === 'dark' ? "#ffb84d" : "#4da6ff" }}
+            style={{ display: "inline", color: theme === 'dark' ? "#f39c12" : "#007bff", transition: "color 0.3s ease" }}
           >
             computer science education
           </motion.a>
@@ -275,8 +275,8 @@ function Navigate() {
             href="https://mfsilva.web.illinois.edu/"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ color: "#ffb84d" }}
-            style={{ display: "inline", color: "#f39c12", transition: "color 0.3s ease" }}
+            whileHover={{ color: theme === 'dark' ? "#ffb84d" : "#4da6ff" }}
+            style={{ display: "inline", color: theme === 'dark' ? "#f39c12" : "#007bff", transition: "color 0.3s ease" }}
           >
             Dr. Mariana Silva
           </motion.a>{" "}
@@ -285,8 +285,8 @@ function Navigate() {
             href="https://ae3.grainger.illinois.edu/holding/grants-for-the-advancement-of-teaching-engineering-gate"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{ color: "#ffb84d" }}
-            style={{ display: "inline", color: "#f39c12", transition: "color 0.3s ease" }}
+            whileHover={{ color: theme === 'dark' ? "#ffb84d" : "#4da6ff" }}
+            style={{ display: "inline", color: theme === 'dark' ? "#f39c12" : "#007bff", transition: "color 0.3s ease" }}
           >
             PriarieLearn
           </motion.a> to support mastery-based learning and meet the course’s growing demand and 2) conducting research on the analysis of student performance data between non-engineering students and engineering students to improve the course’s content and structure.

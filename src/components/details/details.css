@@ -3,7 +3,7 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%; /* Ensures the body can stretch to 100vh */
-    font-family: Arial, sans-serif;
+    font-family: 'Avenir', sans-serif;
   }
   
   /* The main container that holds the Navbar and the Routes */
