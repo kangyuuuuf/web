@@ -33,7 +33,7 @@
     margin: 0; /* 去掉默认外边距 */
     padding: 0; /* 去掉默认内边距 */
     font-family: 'Avenir', sans-serif;
-
+    transition: color 0.3s ease;
   }
   /* 让"终端"容器在屏幕正中 */
   .app-container {
@@ -44,7 +44,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   /* Dark Mode for LandPage */
@@ -59,6 +59,37 @@
   .app-container.dark-mode .circular-image {
     border: 3px solid #ffffff;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+  }
+
+  /* 移动端响应式设计 */
+  @media (max-width: 768px) {
+    .title {
+      font-size: 2.5rem;
+    }
+
+    .circular-image {
+      width: 200px;
+      height: 200px;
+    }
+
+    .head {
+      height: 35vh;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .title {
+      font-size: 2rem;
+    }
+
+    .circular-image {
+      width: 150px;
+      height: 150px;
+    }
+
+    .head {
+      height: 30vh;
+    }
   }
 
   

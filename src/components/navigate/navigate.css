@@ -45,6 +45,60 @@
   color: #ffb84d; /* 鼠标悬停时更亮的黄色 */
 }
 
+/* 汉堡菜单按钮 */
+.menu-toggle {
+  display: none; /* 默认隐藏，只在移动端显示 */
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1001;
+  background: #ffffff;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.menu-toggle:hover {
+  background: #f8f8f8;
+  transform: scale(1.05);
+}
+
+.menu-toggle.active {
+  background: #f39c12;
+  color: #ffffff;
+  border-color: #f39c12;
+}
+
+/* 覆盖层 */
+.sidebar-overlay {
+  display: none; /* 默认隐藏 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* Sidebar */
 .sidebar {
   flex: 1;
@@ -57,6 +111,8 @@
   flex-direction: column;
   align-items: center;
   border-right: 1px solid #ddd;
+  z-index: 1000;
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 /* Circle and text container */
 .circle-container {
@@ -125,17 +181,20 @@
   margin: 20px auto; /* 居中 */
   border: 3px solid #000000; /* 可选：添加边框 */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 可选：添加阴影 */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .sidebar-title {
   font-size: 1.5rem;
   margin: 0;
+  transition: color 0.3s ease;
 }
 
 .sidebar-subtitle {
   font-size: 1rem;
   color: #555;
   margin-bottom: 20px;
+  transition: color 0.3s ease;
 }
 
 .sidebar-info {
@@ -171,6 +230,7 @@
   padding: 0 120px 0 120px;
   display: flex;
   flex-direction: column;
+  transition: margin-left 0.3s ease, width 0.3s ease, padding 0.3s ease, background-color 0.3s ease;
 }
 
 .nav {
@@ -285,6 +345,23 @@
   color: #d0d0d0;
 }
 
+/* Dark Mode for Menu Toggle */
+.container.dark-mode .menu-toggle {
+  background: #2d2d2d;
+  border-color: #404040;
+  color: #ffffff;
+}
+
+.container.dark-mode .menu-toggle:hover {
+  background: #3d3d3d;
+}
+
+.container.dark-mode .menu-toggle.active {
+  background: #f39c12;
+  color: #ffffff;
+  border-color: #f39c12;
+}
+
 /* Responsive Design for Teaching Assistant Section */
 @media (max-width: 1200px) {
   .container-class {
@@ -338,5 +415,87 @@
   .circle-text2 {
     font-size: 0.85rem;
     margin-top: 10px;
+  }
+}
+
+/* 响应式侧边栏 - 移动端 */
+@media (max-width: 768px) {
+  /* 显示汉堡菜单按钮 */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* 显示覆盖层 */
+  .sidebar-overlay {
+    display: block;
+  }
+
+  /* 侧边栏默认隐藏，点击后滑入 */
+  .sidebar {
+    transform: translateX(-100%);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* 侧边栏打开状态 */
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  /* 主内容区域在小屏幕上占满全宽 */
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 0 20px 0 20px;
+  }
+
+  /* 侧边栏打开时，主内容稍微右移（可选） */
+  .main-content.sidebar-open {
+    margin-left: 0;
+  }
+
+  /* 调整侧边栏宽度以适应小屏幕 */
+  .sidebar {
+    width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-toggle {
+    top: 15px;
+    left: 15px;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  .sidebar {
+    width: 260px;
+    padding: 15px;
+  }
+
+  .main-content {
+    padding: 0 15px 0 15px;
+  }
+
+  .profile-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .sidebar-title {
+    font-size: 1.2rem;
+  }
+
+  .sidebar-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .sidebar-info {
+    padding: 40px 0 150px 0;
+    gap: 8px;
+  }
+
+  .sidebar-info a {
+    font-size: 0.9rem;
   }
 }

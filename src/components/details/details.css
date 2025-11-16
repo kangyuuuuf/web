@@ -11,6 +11,10 @@ html, body {
     height: 100vh;    /* Fill the entire browser viewport height */
     width: 100%;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   
   /* If your Navbar component’s top-level div has className="navbar", 
@@ -19,10 +23,16 @@ html, body {
   
   /* The main content (the routed components) should fill all remaining space */
   .routesContainer {
-    flex: 1;               /* Takes up remaining space */
+    flex: 1;               /* Takes up remaining space after navbar */
     background-color: #fff;
     box-sizing: border-box;
-    overflow-y: auto;      /* Scroll if content is taller than the viewport */
+    position: relative;    /* 为绝对定位的子元素提供定位上下文 */
+    min-height: 0;        /* 允许 flex 子元素缩小 */
+    /* 为阴影留出空间，防止被裁剪 */
+    padding: 50px 20px;    /* 上下左右留出空间给阴影 */
+    overflow-y: auto;       /* 允许滚动 */
+    overflow-x: hidden;    /* 防止水平滚动 */
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   /* Dark Mode for Details Container */
@@ -32,4 +42,17 @@ html, body {
 
   .routesContainer.dark-mode {
     background-color: #1a1a1a;
+  }
+
+  /* 移动端响应式：减少 padding 以适应小屏幕 */
+  @media (max-width: 768px) {
+    .routesContainer {
+      padding: 30px 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .routesContainer {
+      padding: 20px 10px;
+    }
   }

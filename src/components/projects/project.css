@@ -16,6 +16,7 @@
     margin: 0 auto;
     padding: 2rem 1rem;
     text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   
   /* Title and subtitle */
@@ -37,9 +38,61 @@
     gap: 1.5rem;
   }
   
-  @media (max-width: 600px) {
-    .cards-wrapper {
-      grid-template-columns: 1fr;
+  @media (max-width: 768px) {
+    .projects-container {
+      padding: 1.5rem 0.75rem;
+    }
+
+    .projects-container h1 {
+      font-size: 1.8rem;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+    }
+
+    .project-card {
+      padding: 1.25rem;
+    }
+
+    .project-title {
+      font-size: 1.2rem;
+    }
+
+    .project-meta {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .projects-container {
+      padding: 1rem 0.5rem;
+    }
+
+    .projects-container h1 {
+      font-size: 1.5rem;
+    }
+
+    .subtitle {
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-card {
+      padding: 1rem;
+    }
+
+    .project-title {
+      font-size: 1.1rem;
+    }
+
+    .project-meta {
+      font-size: 0.85rem;
+    }
+
+    .project-bullets {
+      font-size: 0.9rem;
     }
   }
   
@@ -50,6 +103,7 @@
     padding: 1.5rem;
     text-align: left;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   }
   
   /* Card title */
@@ -57,6 +111,7 @@
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
     color: #333;
+    transition: color 0.3s ease;
   }
   
   /* Meta info: category + date in a row */
@@ -70,10 +125,12 @@
   .project-category {
     font-weight: bold;
     color: #555;
+    transition: color 0.3s ease;
   }
   
   .project-date {
     color: #888;
+    transition: color 0.3s ease;
   }
   
   /* Bullets list */
@@ -81,11 +138,12 @@
     list-style: disc inside;
     line-height: 1.6;
     color: #555;
+    transition: color 0.3s ease;
   }
 
   /* Dark Mode Styles */
   .projects-container.dark-mode {
-    background-color: #1a1a1a;
+    background-color: transparent;
     color: #e0e0e0;
   }
 

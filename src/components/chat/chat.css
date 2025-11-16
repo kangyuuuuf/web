@@ -126,3 +126,77 @@
     border: 1px dashed #ffffff;
     width: 100%;
   }
+
+  /* 移动端响应式设计 */
+  @media (max-width: 768px) {
+    .drawer-container {
+      width: 95%;
+      padding: 0 15px 0 15px;
+    }
+
+    .chat-title {
+      font-size: 3rem;
+      margin-top: 20px;
+      margin-bottom: 15px;
+    }
+
+    .chat-divider {
+      width: 80%;
+    }
+
+    .chatbar_left,
+    .chatbar_right {
+      font-size: 16px;
+      max-width: 85%;
+      padding: 8px 16px 8px 16px;
+    }
+
+    .chat-input {
+      font-size: 16px;
+      padding: 6px 10px;
+    }
+
+    .send-button {
+      font-size: 16px;
+      padding: 6px 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .drawer-container {
+      width: 100%;
+      padding: 0 10px 0 10px;
+    }
+
+    .chat-title {
+      font-size: 2rem;
+      margin-top: 15px;
+      margin-bottom: 10px;
+    }
+
+    .chat-divider {
+      width: 90%;
+    }
+
+    .chatbar_left,
+    .chatbar_right {
+      font-size: 14px;
+      max-width: 90%;
+      padding: 6px 12px 6px 12px;
+    }
+
+    .chat-input {
+      font-size: 14px;
+      padding: 5px 8px;
+    }
+
+    .send-button {
+      font-size: 14px;
+      padding: 5px 8px;
+      margin-left: 5px;
+    }
+
+    .inputbar {
+      padding: 0px 5px 15px 5px;
+    }
+  }

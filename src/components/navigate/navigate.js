@@ -1,9 +1,9 @@
 import "./navigate.css";
 import { animate, delay, motion } from "framer-motion";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useInView } from "react-intersection-observer";
-import { faEnvelope, faFile, faGlobe, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faFile, faGlobe, faLocationDot, faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { useTheme } from '../../contexts/ThemeContext';
 import ThemeToggle from '../themeToggle/ThemeToggle';
@@ -11,6 +11,7 @@ import ThemeToggle from '../themeToggle/ThemeToggle';
 
 function Navigate() {
   const { theme } = useTheme();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const containerVariants = {
     hidden: { opacity: 1 },
     visible: {
@@ -68,13 +69,53 @@ function Navigate() {
     );
   };
 
+  // 监听窗口大小变化，在大屏幕上自动打开侧边栏
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setSidebarOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    setSidebarOpen(false);
+  };
+
   return (
     <motion.div
       className={`container ${theme === 'dark' ? 'dark-mode' : ''}`}
     >
+      {/* 汉堡菜单按钮 - 只在小屏幕显示 */}
+      <button 
+        className={`menu-toggle ${sidebarOpen ? 'active' : ''}`}
+        onClick={toggleSidebar}
+        aria-label="Toggle sidebar"
+      >
+        <FontAwesomeIcon icon={sidebarOpen ? faTimes : faBars} />
+      </button>
+
+      {/* 覆盖层 - 当侧边栏打开时显示 */}
+      {sidebarOpen && (
+        <div 
+          className="sidebar-overlay"
+          onClick={closeSidebar}
+        />
+      )}
+
       {/* Sidebar Section */}
-      <motion.div className="sidebar"       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}>
+      <motion.div 
+        className={`sidebar ${sidebarOpen ? 'open' : ''}`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+      >
         <motion.img
           whileHover={{ rotate: 10 }}
           onClick={() => (window.location.href = "/")}
@@ -133,7 +174,7 @@ function Navigate() {
         </div>
       </motion.div>
 
-      <div className="main-content">
+      <div className={`main-content ${sidebarOpen ? 'sidebar-open' : ''}`}>
       {/* Bio Section */}
       <section className="subsection" id="about">
         <AnimatedElement component="h2" style={{ textAlign: "left" }}>About</AnimatedElement>

@@ -1,4 +1,4 @@
-  /* 让“终端”容器在屏幕正中 */
+  /* 让"终端"容器在屏幕正中 */
 
   .circular-image {
     width: 300px; /* 设置宽度 */
@@ -17,16 +17,18 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 600px;
-    height: 340px;
+    width: 90%;
+    max-width: 600px;
+    min-height: 340px;
+    height: auto;
     background-color: #222;               /* 终端的黑色背景 */
     margin: auto;
     color: #fff;                          /* 终端中文字颜色 */
     font-family: "Courier New", monospace;
     border-radius: 5px;
     text-align: left;
-
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   }
   
   /* 终端头部：包含三个小圆点 + 标题 */
@@ -110,18 +112,22 @@
 
   .terminal-container.dark-mode .terminal-header {
     background-color: #1a1a1a;
+    transition: background-color 0.3s ease;
   }
 
   .terminal-container.dark-mode .terminal-title {
     color: #e0e0e0;
+    transition: color 0.3s ease;
   }
 
   .terminal-container.dark-mode .prompt {
     color: #4ade80; /* 更亮的绿色 */
+    transition: color 0.3s ease;
   }
 
   .terminal-container.dark-mode .command {
     color: #f0f0f0;
+    transition: color 0.3s ease;
   }
 
   /* Light Mode for Terminal (浅灰色 - 白天) */
@@ -133,16 +139,74 @@
 
   .terminal-container:not(.dark-mode) .terminal-header {
     background-color: #e8e8e8;
+    transition: background-color 0.3s ease;
   }
 
   .terminal-container:not(.dark-mode) .terminal-title {
     color: #333;
+    transition: color 0.3s ease;
   }
 
   .terminal-container:not(.dark-mode) .prompt {
     color: #28a745; /* 绿色提示符 */
+    transition: color 0.3s ease;
   }
 
   .terminal-container:not(.dark-mode) .command {
     color: #333;
+    transition: color 0.3s ease;
+  }
+
+  /* 移动端响应式设计 */
+  @media (max-width: 768px) {
+    .terminal-container {
+      position: relative;
+      top: auto;
+      left: auto;
+      transform: none;
+      width: 95%;
+      max-width: none;
+      margin: 20px auto;
+      min-height: 280px;
+    }
+
+    .terminal-body {
+      padding: 12px;
+      font-size: 14px;
+    }
+
+    .terminal-title {
+      font-size: 12px;
+    }
+
+    .circular-image {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .terminal-container {
+      width: 98%;
+      margin: 10px auto;
+      min-height: 250px;
+    }
+
+    .terminal-body {
+      padding: 10px;
+      font-size: 12px;
+    }
+
+    .terminal-header {
+      padding: 6px 10px;
+    }
+
+    .terminal-title {
+      font-size: 11px;
+    }
+
+    .circular-image {
+      width: 150px;
+      height: 150px;
+    }
   }
