@@ -89,7 +89,7 @@ const About = () => {
             <div className="hobby-info">
               <h3>Bouldering</h3>
               <p>
-                Started bouldering in <strong>March 2025</strong>, BEST SPORTS EVER! I currently climb at around the <strong>V4–V5</strong> level.
+                Started bouldering in <strong>March 2025</strong>, BEST SPORT EVER! I currently climb at around the <strong>V4–V5</strong> level.
               </p>
               <p>
                 I usually go 2–3 times per week, focusing on improving technique, dynamic movement, and body tension. I usually climb with a small group of friends, and we love projecting routes together and sharing beta. One of my favorite parts of climbing is the problem-solving and the feeling of finally sending something after many attempts.
@@ -102,7 +102,7 @@ const About = () => {
               <video 
                 controls 
                 onLoadedMetadata={(e) => {
-                  e.target.volume = 0.3;
+                  e.target.volume = 0.1;
                 }}
               >
                 <source src="/video/climb.MOV" type="video/quicktime" />

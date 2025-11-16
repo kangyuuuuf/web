@@ -1,29 +1,31 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "./snakePage.css";
+import { useTheme } from '../../contexts/ThemeContext';
+import ThemeToggle from '../themeToggle/ThemeToggle';
 
 function SnakePage() {
+  const { theme } = useTheme();
+
   return (
-<div
-  className="container-game"
-  style={{
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    minHeight: "100vh",
-  }}
->
-  <h3>Whoops, 404 error!</h3>
-  <iframe
-    title="SnakeGame"
-    src="/snake_game/snake.html"
-    style={{
-        width: "50%",
-        height: "calc(50vw/1980 * 1080)",
-      border: "1px solid black",
-    }}
-  />
-</div>
+    <div className={`snake-page-container ${theme === 'dark' ? 'dark-mode' : ''}`}>
+      <motion.div
+        className="snake-content-wrapper"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <h3>Whoops, 404 error!</h3>
+        <div className="game-container">
+          <iframe
+            title="SnakeGame"
+            src="/snake_game/snake.html"
+            className="snake-game-iframe"
+          />
+        </div>
+      </motion.div>
+      <ThemeToggle />
+    </div>
   );
 }
 

@@ -56,7 +56,7 @@
 }
 
 .navbar-link:hover {
-  color: #f39c12;
+  color: #0066cc;
 }
 
 /* Theme Toggle Button */
@@ -76,8 +76,8 @@
 }
 
 .theme-toggle-btn:hover {
-  background-color: #f39c12;
-  border-color: #f39c12;
+  background-color: #0066cc;
+  border-color: #0066cc;
   color: #ffffff;
   transform: rotate(15deg);
 }
