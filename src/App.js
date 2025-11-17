@@ -19,9 +19,9 @@ function App() {
           <Routes>
             <Route path="/" element={<LandPage />} />
             <Route path="/navigate" element={<Navigate  />} />
-            <Route path='/details/*' element={<Details />} />
+            <Route path='/details' element={<Details />} />
             <Route path="*" element={<SnakePage/> } />
-            <Route path="/chat" element={<Chat />} />
+            {/* <Route path="/chat" element={<Chat />} /> */}
           </Routes>
       </Router>
     </ThemeProvider>
