@@ -113,6 +113,16 @@ const About = () => {
           </div>
         </div>
 
+        {/* Family Section */}
+        {/* <div className="content-section">
+          <h2>Family</h2>
+          <div className="family-image-wrapper">
+            <div className="image-container">
+              <img src="/images/family.jpg" alt="My Family" />
+            </div>
+          </div>
+        </div> */}
+
         {/* Support Section */}
         <div className="content-section">
           <h2>Support</h2>

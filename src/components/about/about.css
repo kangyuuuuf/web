@@ -268,6 +268,54 @@
   min-height: auto;
 }
 
+/* Family Section */
+.family-image-wrapper {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.family-image-wrapper .image-container {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 2px dashed #ddd;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #999;
+  position: relative;
+}
+
+.family-image-wrapper .image-container:empty::before {
+  content: "图片位置 - 可以在这里添加图片";
+  font-size: 16px;
+}
+
+.family-image-wrapper .image-container img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 500px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: block;
+  object-fit: contain;
+  padding: 20px;
+}
+
+.family-image-wrapper .image-container:not(:empty) {
+  border: none;
+  background: transparent;
+  padding: 0;
+  min-height: auto;
+}
+
 /* Contact Section */
 .contact-content {
   margin-top: 10px;
@@ -459,6 +507,10 @@
     min-height: 250px;
   }
 
+  .family-image-wrapper .image-container {
+    min-height: 250px;
+  }
+
   .support-cards {
     flex-direction: column;
     gap: 20px;
@@ -544,6 +596,11 @@
 }
 
 .single-page-container.dark-mode .video-container {
+  background: #2d2d2d;
+  border: 2px dashed #404040;
+}
+
+.single-page-container.dark-mode .family-image-wrapper .image-container {
   background: #2d2d2d;
   border: 2px dashed #404040;
 }
