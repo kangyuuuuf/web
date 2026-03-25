@@ -41,6 +41,7 @@ function Navigate() {
     { id: 7, time: "2025.02", info: "Two Papers as 3rd Author Accepted to ASEE Annual Conference, ✈️ Montreal in June!" },
     { id: 8, time: "2025.05", info: "Summer Intern @ PriarieLearn" },
     { id: 9, time: "2025.11", info: "A Poster Accepted to SIGCSE TS 2026" },
+    { id: 10, time: "2026.03", info: "One Paper as 3rd Author Accepted to AIED 2026!" },
     
 
     
